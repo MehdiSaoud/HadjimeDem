@@ -9,14 +9,14 @@ const quoteSchema = Joi.object().keys({
   createdAt: Joi.date().optional(),
   relocationDescription: Joi.string().required(),
   recoveryCount: Joi.number().required(),
-  state: Joi.string().required().enum('Envoyé', 'À relancer', 'Validé', 'Refusé'),
+  state: Joi.string().required().allow('Envoyé', 'À relancer', 'Validé', 'Refusé'),
   lastRecoveryDateCall: Joi.date().optional(),
 
   // Customer info
   customer: Joi.object().keys({
     lastName: Joi.string().required(),
     firstName: Joi.string().required(),
-    mail: Joi.string().mail().required().match(/^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/, 'Please enter a valid email'),
+    mail: Joi.string().email().required(),
     phone: Joi.string().required(),
   }),
   // Arrival info

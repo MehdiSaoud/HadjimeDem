@@ -29,3 +29,6 @@ const UserSchema = new mongoose.Schema({
 
 
 module.exports = mongoose.model('User', UserSchema);
+
+
+//comment déclarer des objet dans des objet ou des array dans des array

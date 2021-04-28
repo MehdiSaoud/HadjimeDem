@@ -3,22 +3,21 @@ const Quote = require('../models/quote.model');
 
 const quoteSchema = Joi.object().keys({
 
-  furnitures: Joi.array().required(),
   volume: Joi.number().required(),
   relocationDate: Joi.date().required(),
   createdAt: Joi.date().optional(),
   relocationDescription: Joi.string().required(),
   recoveryCount: Joi.number().required(),
-  state: Joi.string().required().allow('Envoyé', 'À relancer', 'Validé', 'Refusé'),
+  state: Joi.string().allow('Envoyé', 'À relancer', 'Validé', 'Refusé').required(),
   lastRecoveryDateCall: Joi.date().optional(),
 
   // Customer info
   customer: Joi.object().keys({
     lastName: Joi.string().required(),
     firstName: Joi.string().required(),
-    mail: Joi.string().email().required(),
+    mail: Joi.string().email({ tlds: { allow: false } }).required(),
     phone: Joi.string().required(),
-  }),
+  }).required(),
   // Arrival info
   arrival: Joi.object().keys({
     homeType: Joi.string().required(),
@@ -28,10 +27,10 @@ const quoteSchema = Joi.object().keys({
     floor: Joi.number().required(),
     elevator: Joi.object().keys({
       available: Joi.boolean().required(),
-      size: Joi.string().required(),
-    }),
-    additionalInfo: Joi.string().optional(),
-  }),
+      size: Joi.string().allow(null, '').optional(),
+    }).required(),
+    additionalInfo: Joi.string().allow(null, '').optional(),
+  }).required(),
   // Leaving info
   leaving: Joi.object().keys({
     homeType: Joi.string().required(),
@@ -41,10 +40,10 @@ const quoteSchema = Joi.object().keys({
     floor: Joi.number().required(),
     elevator: Joi.object().keys({
       available: Joi.boolean().required(),
-      size: Joi.string().required(),
-    }),
-    additionalInfo: Joi.string().optional(),
-  }),
+      size: Joi.string().allow(null, '').optional(),
+    }).required(),
+    additionalInfo: Joi.string().allow(null, '').optional(),
+  }).required(),
   
   // Prices
   prices: Joi.object().keys({
@@ -54,11 +53,11 @@ const quoteSchema = Joi.object().keys({
   }).required(),
 
   // Inventory
-  inventory: Joi.object().keys({
+  inventory: Joi.array().items({
     room: Joi.string().required(),
-    customFurnitures: Joi.object().keys({
+    customFurnitures: Joi.array().items({
       name: Joi.string().required(),
-      dismantle: Joi.string().required(),
+      dismantle: Joi.boolean().required(),
       volume: Joi.number().required(),
       size: Joi.object().keys({
         width: Joi.number().required(),
@@ -67,7 +66,7 @@ const quoteSchema = Joi.object().keys({
       }).required(),
     }),
   furnitures: Joi.array().required(),
-  }).optional(),
+  }),
 })
 
 
@@ -76,8 +75,13 @@ async function insert(quote) {
   return await new Quote(quote).save();
 }
 
+async function getAll() {
+  return await Quote.find({});
+}
+
 module.exports = {
-  insert
+  insert,
+  getAll
 }
 
 

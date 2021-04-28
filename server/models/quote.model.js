@@ -13,7 +13,7 @@ const QuoteSchema = new mongoose.Schema({
     mail: {
       type: String,
       required: true,
-      match: [/^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/, 'Please enter a valid email'],
+      match: [/^([\w-.]+@([\w-]+.)+[\w-]{2,4})?$/, 'Please enter a valid email'],
     },
     phone: {
       type: String,
@@ -184,7 +184,8 @@ const QuoteSchema = new mongoose.Schema({
       },
     },
   ],
-  versionKey: false,
+}, {
+  versionKey: false
 });
 
 

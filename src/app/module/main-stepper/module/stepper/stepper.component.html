@@ -1,0 +1,12 @@
+<div class="wrapper-stepper">
+  <p>stepper works!</p>
+  <!-- STEPPER -->
+  <mat-horizontal-stepper linear #stepper>
+    <!-- STEPS -->
+    <div *ngFor="let step of steps">
+      <mat-step [stepControl]="step.formGroup" >
+        <ng-template matStepLabel>{{step.title}}</ng-template>
+      </mat-step>
+    </div>
+  </mat-horizontal-stepper>
+</div>

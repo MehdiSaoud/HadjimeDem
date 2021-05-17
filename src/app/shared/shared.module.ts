@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+/*** CDK ***/
+import { CdkStepperModule } from '@angular/cdk/stepper';
+
+/*** MATERIAL ***/
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
@@ -19,6 +23,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   exports: [
@@ -42,6 +47,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatExpansionModule,
     MatFormFieldModule,
     MatProgressBarModule,
+    CdkStepperModule,
+    MatStepperModule,
   ],
 })
 export class SharedModule {}

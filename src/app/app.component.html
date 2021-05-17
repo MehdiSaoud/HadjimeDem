@@ -1,5 +1,8 @@
+<!-- APP HEADER -->
 <app-header [user]="user$ | async"></app-header>
 
-<router-outlet></router-outlet>
-<app-next-step></app-next-step>
+<!-- APP MAIN RENDERING -->
+<div class="wrapper-app">
+  <router-outlet></router-outlet>
+</div>
 

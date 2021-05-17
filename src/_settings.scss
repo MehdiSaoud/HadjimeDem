@@ -1,12 +1,33 @@
 /*-----------------------------------------------
+                CSS RESET
+-----------------------------------------------*/
+
+@import './assets/sass/reset.css';
+
+
+/*-----------------------------------------------
                    Variables
 -----------------------------------------------*/
+
 $linesColor: #dbdbdb;
 $categoryTitleColor: #686868;
 $categoryEntityColor: #3F3F3F;
 
 
-:root {
-    --main-color: #3E73FA;
-    --second-color: 
+:root 
+{
+    --mainColor: #3E73FA;
+    --secondColor: #2EC7AB;
+    --stepColor: #BFBFBF;
+    --titleInputMargin: 8px;
+    --inputMargin: 16px;
+    --inputPaddingTop: 14px;
+    --inputPaddingLeft: 10px;
+
+    @mixin absolute($top: 0, $left: 0) {
+        position: absolute;
+        top: $top;
+        left: $left;
+    }
+
 }

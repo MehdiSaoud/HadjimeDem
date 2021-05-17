@@ -1,25 +1,38 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+/*** CORE ***/
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule, APP_INITIALIZER } from "@angular/core";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
-import { SharedModule } from './shared/shared.module';
+/*** INTERCEPTOR ***/
+import { AuthHeaderInterceptor } from "./interceptors/header.interceptor";
+import { CatchErrorInterceptor } from "./interceptors/http-error.interceptor";
 
-import { AppComponent } from './app.component';
-import { AuthHeaderInterceptor } from './interceptors/header.interceptor';
-import { CatchErrorInterceptor } from './interceptors/http-error.interceptor';
+/*** MODULES ***/
+import { SharedModule } from "./shared/shared.module";
+import { AppRoutingModule } from "./app-routing.module";
+import { MainStepperModule } from "./module/main-stepper/main-stepper.module";
 
-import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
-import { AuthService } from './shared/services';
+/*** COMPONENT ***/
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./component/header/header.component";
+import { MainComponent } from "./layout/main/main.component";
+
+/*** SERVICES ***/
+import { AuthService } from "./shared/services";
 
 export function appInitializerFactory(authService: AuthService) {
   return () => authService.checkTheUserOnTheFirstLoad();
 }
 
 @NgModule({
-  imports: [BrowserAnimationsModule, HttpClientModule, SharedModule, AppRoutingModule],
-  declarations: [AppComponent, HeaderComponent, HomeComponent],
+  imports: [
+    BrowserAnimationsModule,
+    HttpClientModule,
+    SharedModule,
+    AppRoutingModule,
+    MainStepperModule,
+  ],
+  declarations: [AppComponent, HeaderComponent, MainComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

@@ -16,7 +16,7 @@ import { MainStepperModule } from "./module/main-stepper/main-stepper.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./component/header/header.component";
 import { MainComponent } from "./layout/main/main.component";
-import { NextStepComponent } from './next-step/next-step.component';
+import { NextStepComponent } from './module/main-stepper/next-step/next-step.component';
 
 /*** SERVICES ***/
 import { AuthService } from "./shared/services";

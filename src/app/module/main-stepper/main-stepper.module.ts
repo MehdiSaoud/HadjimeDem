@@ -10,7 +10,7 @@ import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
-  declarations: [ MainStepperComponent ],
+  declarations: [ MainStepperComponent],
   imports: [
     SharedModule,
     StepperModule

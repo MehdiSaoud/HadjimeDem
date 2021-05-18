@@ -1,0 +1,11 @@
+//@import '../../../../../../../settings';
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    //@include inputForm(50px);
+}
+

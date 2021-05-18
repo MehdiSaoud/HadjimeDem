@@ -111,6 +111,32 @@ export class QuestionService {
         ];
         return of(questions.sort((a, b) => a.order - b.order));
       },
+      step8: () => {
+        const questions: QuestionBase<string>[] = [    
+          new TextboxQuestion({
+            key: 'adress',
+            label: '',
+            value: '',
+            required: true,
+            order: 1
+          }),
+          new TextboxQuestion({
+            key: 'adress',
+            label: '',
+            value: '',
+            required: true,
+            order: 1
+          }),
+          new TextboxQuestion({
+            key: 'adress',
+            label: '',
+            value: '',
+            required: true,
+            order: 1
+          }),
+        ];
+        return of(questions.sort((a, b) => a.order - b.order));
+      },
       // // STEP : ARRIVÉ
       // step8: () => {
       //   const steps: StepInterface<string>[] = [

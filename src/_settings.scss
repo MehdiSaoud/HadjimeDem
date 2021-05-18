@@ -23,11 +23,7 @@ $categoryEntityColor: #3F3F3F;
     --inputMargin: 16px;
     --inputPaddingTop: 14px;
     --inputPaddingLeft: 10px;
-
-    @mixin absolute($top: 0, $left: 0) {
-        position: absolute;
-        top: $top;
-        left: $left;
-    }
+    --inputHeight: 40px;
 
 }
+

@@ -6,7 +6,7 @@
     <div *ngFor="let step of steps">
       <mat-step [stepControl]="step.formGroup" >
         <ng-template matStepLabel>{{step.title}}</ng-template>
-        <app-dynamic-form [questions]='questions$ | async'></app-dynamic-form>
+        <app-dynamic-form [stepId]='step.id'></app-dynamic-form>
       </mat-step>
     </div>
   </mat-horizontal-stepper>

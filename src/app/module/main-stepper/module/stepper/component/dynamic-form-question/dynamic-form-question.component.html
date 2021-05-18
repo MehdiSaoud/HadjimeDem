@@ -1,4 +1,4 @@
-<div [formGroup]="form">
+<div  [formGroup]="form">
   <label [attr.for]="question.key">{{question.label}}</label>
 
   <div [ngSwitch]="question.controlType">
@@ -10,7 +10,17 @@
       <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
     </select>
 
+    <mat-slide-toggle
+          *ngSwitchCase="'switch'"
+          [formControlName]="question.key"
+          class="example-margin"
+          [color]="color"
+          [checked]="checked"
+          [disabled]="disabled">
+    </mat-slide-toggle>
+
   </div>
 
   <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
 </div>
+

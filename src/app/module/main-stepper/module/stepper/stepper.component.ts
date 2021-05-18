@@ -8,7 +8,7 @@ import { QuestionBase } from '@app/shared/services/question/interface/question-b
 
 /*** SERVICE ***/
 import { StepperControlService } from '@app/shared/services/step/steps-control.service';
-import { QuestionService } from '@app/shared/services/question/question.service';
+
 
 @Component({
   selector: 'app-stepper',
@@ -20,10 +20,9 @@ export class StepperComponent implements OnInit {
   @Input() steps: StepInterface<string>[] = [];
   @Input() mainForm: FormGroup = new FormGroup({});
   form: FormGroup = new FormGroup({});
-  questions$: Observable<QuestionBase<any>[]>;
 
-  constructor(private scs: StepperControlService,questionService: QuestionService) { 
-    this.questions$ = questionService.getQuestions();
+  constructor(private scs: StepperControlService) { 
+   
   }
 
   ngOnInit(): void {
@@ -32,10 +31,10 @@ export class StepperComponent implements OnInit {
     this.mainForm.controls[this.steps[0].id] = this.form
 
     // Generate Form for each step
-    this.steps.forEach(step => {
-      console.log(step);
-    });
-    console.log(this.mainForm);
+    // this.steps.forEach(step => {
+    //   console.log(step);
+    // });
+    // console.log(this.mainForm);
   }
 
 }

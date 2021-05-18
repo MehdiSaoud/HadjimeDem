@@ -50,17 +50,17 @@ export class StepsService {
       step1: () => {
         const steps: StepInterface<string>[] = [
           new StepInterface({
-            id: 1,
+            id: 5,
             title: 'Type d"habitation au départ',
             order: 1
           }),
           new StepInterface({
-            id: 2,
+            id: 6,
             title: 'Saisissez votre adresse de départ',
             order: 2
           }),
           new StepInterface({
-            id: 3,
+            id: 7,
             title: 'Accès',
             order: 3
           }),
@@ -70,17 +70,17 @@ export class StepsService {
       step2: () => {
         const steps: StepInterface<string>[] = [
           new StepInterface({
-            id: 1,
+            id: 8,
             title: 'Arrivé 1/3',
             order: 1
           }),
           new StepInterface({
-            id: 2,
+            id: 9,
             title: 'Arrivé 2/3',
             order: 2
           }),
           new StepInterface({
-            id: 3,
+            id: 10,
             title: 'Arrivé 3/3',
             order: 3
           }),
@@ -90,17 +90,17 @@ export class StepsService {
       step3: () => {
         const steps: StepInterface<string>[] = [
           new StepInterface({
-            id: 1,
+            id: 11,
             title: 'Déménagement 1/3',
             order: 1
           }),
           new StepInterface({
-            id: 2,
+            id: 12,
             title: 'Déménagement 2/3',
             order: 2
           }),
           new StepInterface({
-            id: 3,
+            id: 13,
             title: 'Déménagement 3/3',
             order: 3
           }),
@@ -110,17 +110,17 @@ export class StepsService {
       step4: () => {
         const steps: StepInterface<string>[] = [
           new StepInterface({
-            id: 1,
+            id: 14,
             title: 'Devis 1/3',
             order: 1
           }),
           new StepInterface({
-            id: 2,
+            id: 15,
             title: 'Devis 2/3',
             order: 2
           }),
           new StepInterface({
-            id: 3,
+            id: 16,
             title: 'Devis 3/3',
             order: 3
           }),

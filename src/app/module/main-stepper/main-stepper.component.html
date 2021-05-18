@@ -4,9 +4,9 @@
   <mat-horizontal-stepper linear #stepper>
     <!-- STEPS -->
     <div *ngFor="let step of steps">
-      <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+      <mat-step [stepControl]="firstFormGroup" >
         <ng-template matStepLabel>{{step.title}}</ng-template>
-        <app-stepper [steps]='step.steps$ | async'></app-stepper>
+        <app-stepper [steps]='step.steps$ | async' [mainForm]='form'></app-stepper>
       </mat-step>
     </div>
     <button mat-button matStepperNext>ETAPE SUIVANTE</button>

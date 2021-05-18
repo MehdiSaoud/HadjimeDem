@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { StepsService } from '../../shared/services/stepper-steps/steps.service';
+import { StepsService } from '../../shared/services/step/steps.service';
 
 @Component({
   selector: 'app-main',

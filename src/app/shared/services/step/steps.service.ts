@@ -19,26 +19,25 @@ export class StepsService {
           steps$: this.getChildrenSteps('step'+ 1),
           order: 1
         }),
-        new StepInterface({
-          id: 2,
-          title: 'Arrivé',
-          steps$: this.getChildrenSteps('step'+ 2),
-          order: 2
-        }),
-        new StepInterface({
-          id: 3,
-          title: 'Déménagement',
-          steps$: this.getChildrenSteps('step'+ 3),
-          order: 3
-        }),
-        new StepInterface({
-          id: 4,
-          title: 'Devis',
-          steps$: this.getChildrenSteps('step'+ 4),
-          order: 4
-        }),  
+        // new StepInterface({
+        //   id: 2,
+        //   title: 'Arrivé',
+        //   steps$: this.getChildrenSteps('step'+ 2),
+        //   order: 2
+        // }),
+        // new StepInterface({
+        //   id: 3,
+        //   title: 'Déménagement',
+        //   steps$: this.getChildrenSteps('step'+ 3),
+        //   order: 3
+        // }),
+        // new StepInterface({
+        //   id: 4,
+        //   title: 'Devis',
+        //   steps$: this.getChildrenSteps('step'+ 4),
+        //   order: 4
+        // }),  
       ];
-      console.log(parentSteps);
       return of(parentSteps.sort((a, b) => a.order - b.order)); 
   }
 
@@ -51,18 +50,18 @@ export class StepsService {
       step1: () => {
         const steps: StepInterface<string>[] = [
           new StepInterface({
-            id: 2,
-            title: 'Départ 1/3',
+            id: 1,
+            title: 'Type d"habitation au départ',
             order: 1
           }),
           new StepInterface({
             id: 2,
-            title: 'Départ 2/3',
+            title: 'Saisissez votre adresse de départ',
             order: 2
           }),
           new StepInterface({
-            id: 2,
-            title: 'Départ 3/3',
+            id: 3,
+            title: 'Accès',
             order: 3
           }),
         ];
@@ -71,7 +70,7 @@ export class StepsService {
       step2: () => {
         const steps: StepInterface<string>[] = [
           new StepInterface({
-            id: 2,
+            id: 1,
             title: 'Arrivé 1/3',
             order: 1
           }),
@@ -81,7 +80,7 @@ export class StepsService {
             order: 2
           }),
           new StepInterface({
-            id: 2,
+            id: 3,
             title: 'Arrivé 3/3',
             order: 3
           }),
@@ -91,7 +90,7 @@ export class StepsService {
       step3: () => {
         const steps: StepInterface<string>[] = [
           new StepInterface({
-            id: 2,
+            id: 1,
             title: 'Déménagement 1/3',
             order: 1
           }),
@@ -101,7 +100,7 @@ export class StepsService {
             order: 2
           }),
           new StepInterface({
-            id: 2,
+            id: 3,
             title: 'Déménagement 3/3',
             order: 3
           }),
@@ -111,7 +110,7 @@ export class StepsService {
       step4: () => {
         const steps: StepInterface<string>[] = [
           new StepInterface({
-            id: 2,
+            id: 1,
             title: 'Devis 1/3',
             order: 1
           }),
@@ -121,7 +120,7 @@ export class StepsService {
             order: 2
           }),
           new StepInterface({
-            id: 2,
+            id: 3,
             title: 'Devis 3/3',
             order: 3
           }),

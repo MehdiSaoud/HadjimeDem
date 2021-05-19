@@ -18,6 +18,10 @@ export class MainStepperComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.scs.toFormGroup(this.steps)
+  
+    console.log('form.get(step.id)',this.form.controls[this.steps[0].id]);
+    
+    
   }
 
 }

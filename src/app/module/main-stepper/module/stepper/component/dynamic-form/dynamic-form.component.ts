@@ -7,6 +7,7 @@ import { QuestionBase } from '@app/shared/services/question/interface/question-b
 /*** SERVICE ***/
 import { QuestionService } from '@app/shared/services/question/question.service';
 import { QuestionControlService } from '@app/shared/services/question/question-control.service';
+import { StepInterface } from '../../../../../../shared/services/step/interface/step';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -16,8 +17,10 @@ import { QuestionControlService } from '@app/shared/services/question/question-c
 
 export class DynamicFormComponent implements OnInit {
 
+  
+  @Input() step: StepInterface<string> = new StepInterface;
+  @Input() mainForm: FormGroup = new FormGroup({});
   questions$: QuestionBase<string>[] = [];
-  @Input() stepId: number | undefined;
   form: FormGroup = new FormGroup({});
   payLoad = '';
   questions = [];
@@ -26,15 +29,15 @@ export class DynamicFormComponent implements OnInit {
   constructor(private qcs: QuestionControlService, private questionService: QuestionService) {}
 
   ngOnInit(): void {
-
-    this.questions$ = this.questionService.getQuestions('step' + this.stepId).subscribe((result:any) =>{
-   
+    // Get questions for related step
+    this.questions$ = this.questionService.getQuestions('step' + this.step.id).subscribe((result:any) =>{
+      // Create form group for questions
       this.form = this.qcs.toFormGroup(result);
-      this.questions = result;
-
-      console.log(this.questions);
-      this.dataLoad = true;
-      
+      // To fix
+      this.questions = result; 
+      // Add the questions's FormGroup to nested steps related by id     
+      this.mainForm.controls[this.step.parentStep]['controls'][this.step.id] = this.form
+      console.log(this.mainForm); 
     })
   
    

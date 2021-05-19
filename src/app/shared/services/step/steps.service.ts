@@ -5,6 +5,7 @@ import { StepInterface } from './interface/step';
 import { of } from 'rxjs';
 
 @Injectable({ providedIn: 'root'})
+
 export class StepsService {
 
   /**
@@ -38,6 +39,7 @@ export class StepsService {
         //   order: 4
         // }),  
       ];
+      
       return of(parentSteps.sort((a, b) => a.order - b.order)); 
   }
 
@@ -52,24 +54,21 @@ export class StepsService {
           new StepInterface({
             id: 5,
             title: 'Type d"habitation au départ',
+            parentStep: 1,
             order: 1
           }),
           new StepInterface({
             id: 6,
             title: 'Saisissez votre adresse de départ',
+            parentStep: 1,
             order: 2
           }),
           new StepInterface({
             id: 7,
             title: 'Accès',
+            parentStep: 1,
             order: 3
-          }),
-           new StepInterface({
-            id: 8,
-            title: 'Testdimeh',
-            order: 4
-          }),
-          
+          }),         
         ];
         return of(steps.sort((a, b) => a.order - b.order));
       },
@@ -78,16 +77,19 @@ export class StepsService {
           new StepInterface({
             id: 8,
             title: 'Arrivé 1/3',
+            parentStep: 2,
             order: 1
           }),
           new StepInterface({
             id: 9,
             title: 'Arrivé 2/3',
+            parentStep: 2,
             order: 2
           }),
           new StepInterface({
             id: 10,
             title: 'Arrivé 3/3',
+            parentStep: 2,
             order: 3
           }),
         ];
@@ -98,16 +100,19 @@ export class StepsService {
           new StepInterface({
             id: 11,
             title: 'Déménagement 1/3',
+            parentStep: 3,
             order: 1
           }),
           new StepInterface({
             id: 12,
             title: 'Déménagement 2/3',
+            parentStep: 3,
             order: 2
           }),
           new StepInterface({
             id: 13,
             title: 'Déménagement 3/3',
+            parentStep: 3,
             order: 3
           }),
         ];
@@ -118,16 +123,19 @@ export class StepsService {
           new StepInterface({
             id: 14,
             title: 'Devis 1/3',
+            parentStep: 3,
             order: 1
           }),
           new StepInterface({
             id: 15,
             title: 'Devis 2/3',
+            parentStep: 3,
             order: 2
           }),
           new StepInterface({
             id: 16,
             title: 'Devis 3/3',
+            parentStep: 3,
             order: 3
           }),
         ];

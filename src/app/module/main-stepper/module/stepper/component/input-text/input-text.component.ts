@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { QuestionBase } from '../../../../../../shared/services/question/interface/question-base';
 
 @Component({
   selector: 'app-input-text',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputTextComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(): void {

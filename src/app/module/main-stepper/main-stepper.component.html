@@ -4,7 +4,7 @@
   <mat-horizontal-stepper linear #stepper>
     <!-- STEPS -->
     <div *ngFor="let step of steps">
-      <mat-step [stepControl]="firstFormGroup" >
+      <mat-step [stepControl]="form.controls[step.id]" >
         <ng-template matStepLabel>{{step.title}}</ng-template>
         <app-stepper [steps]='step.steps$ | async' [mainForm]='form'></app-stepper>
       </mat-step>

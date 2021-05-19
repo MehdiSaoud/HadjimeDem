@@ -4,10 +4,14 @@
   <mat-horizontal-stepper linear #stepper>
     <!-- STEPS -->
     <div *ngFor="let step of steps">
-      <mat-step [stepControl]="step.formGroup" >
+      <mat-step [stepControl]="mainForm.controls[step.parentStep]['controls'][step.id]" >
         <ng-template matStepLabel>{{step.title}}</ng-template>
-        <app-dynamic-form [stepId]='step.id'></app-dynamic-form>
+        <app-dynamic-form [step]='step' [mainForm]='mainForm'></app-dynamic-form>
+        <button mat-button matStepperNext [disabled]="!mainForm.controls[step.parentStep]['controls'][step.id].valid" (click)="isValid()">ETAPE SUIVANTE</button>
       </mat-step>
+      
     </div>
+    
   </mat-horizontal-stepper>
+  
 </div>

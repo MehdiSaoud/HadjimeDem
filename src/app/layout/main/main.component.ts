@@ -10,11 +10,12 @@ import { StepsService } from '../../shared/services/step/steps.service';
 export class MainComponent implements OnInit {
   mainSteps$: Observable<any[]>;
 
-  constructor(service: StepsService) { 
-    this.mainSteps$ = service.getSteps();
+  constructor(stepService: StepsService) { 
+    this.mainSteps$ = stepService.getSteps();
   }
 
   ngOnInit(): void {
   }
+  
 
 }

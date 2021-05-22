@@ -7,7 +7,7 @@
       <mat-step [stepControl]="mainForm.controls[step.parentStep]['controls'][step.id]" >
         <ng-template matStepLabel>{{step.title}}</ng-template>
         <app-dynamic-form [step]='step' [mainForm]='mainForm'></app-dynamic-form>
-        <button mat-button matStepperNext [disabled]="!mainForm.controls[step.parentStep]['controls'][step.id].valid" (click)="isValid()">ETAPE SUIVANTE</button>
+        <button mat-button matStepperNext [disabled]="!mainForm.controls[step.parentStep]['controls'][step.id].valid" (click)="isValid(step)">ETAPE SUIVANTE</button>
       </mat-step>
       
     </div>

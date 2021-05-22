@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { StepInterface } from '../../shared/services/step/interface/step';
 import { StepperControlService } from '../../shared/services/step/steps-control.service'
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-main-stepper',
@@ -17,11 +17,7 @@ export class MainStepperComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form = this.scs.toFormGroup(this.steps)
-  
-    console.log('form.get(step.id)',this.form.controls[this.steps[0].id]);
-    
-    
+    this.form = this.scs.toFormGroup(this.steps); 
   }
 
 }

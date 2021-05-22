@@ -1,5 +1,3 @@
-<div class="input-group">
-    <label for=""></label>
-    <select class="text" name="" id="">
-    </select>
-</div>
+<select class="text">
+    <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+</select>

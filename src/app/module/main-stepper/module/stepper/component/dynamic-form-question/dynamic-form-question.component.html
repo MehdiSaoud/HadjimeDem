@@ -11,7 +11,7 @@
     </select>-->
 
   
-    <app-input-dropdown [question]="question" [formControlName]="question.key" [id]="question.key" name="question.key" ngDefaultControl *ngSwitchCase="'dropdown'"></app-input-dropdown>
+    <app-input-dropdown [question]="question"  [form]='form'  *ngSwitchCase="'dropdown'"></app-input-dropdown>
    
 
     <mat-slide-toggle

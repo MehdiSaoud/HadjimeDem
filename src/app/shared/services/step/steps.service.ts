@@ -26,12 +26,12 @@ export class StepsService {
           steps$: this.getChildrenSteps('step'+ 2),
           order: 2
         }),
-        // new StepInterface({
-        //   id: 3,
-        //   title: 'Déménagement',
-        //   steps$: this.getChildrenSteps('step'+ 3),
-        //   order: 3
-        // }),
+        new StepInterface({
+          id: 3,
+          title: 'Déménagement',
+          steps$: this.getChildrenSteps('step'+ 3),
+          order: 3
+        }),
         // new StepInterface({
         //   id: 4,
         //   title: 'Devis',
@@ -103,18 +103,18 @@ export class StepsService {
             parentStep: 3,
             order: 1
           }),
-          new StepInterface({
-            id: 12,
-            title: 'Déménagement 2/3',
-            parentStep: 3,
-            order: 2
-          }),
-          new StepInterface({
-            id: 13,
-            title: 'Déménagement 3/3',
-            parentStep: 3,
-            order: 3
-          }),
+          // new StepInterface({
+          //   id: 12,
+          //   title: 'Déménagement 2/3',
+          //   parentStep: 3,
+          //   order: 2
+          // }),
+          // new StepInterface({
+          //   id: 13,
+          //   title: 'Déménagement 3/3',
+          //   parentStep: 3,
+          //   order: 3
+          // }),
         ];
         return of(steps.sort((a, b) => a.order - b.order));
       },

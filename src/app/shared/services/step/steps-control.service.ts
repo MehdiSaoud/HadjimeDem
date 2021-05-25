@@ -11,7 +11,7 @@ export class StepperControlService {
     const group: any = {};
     steps.forEach(step => {
       group[step.id] = new FormGroup({
-        stepsValid: new FormControl(null, [Validators.required]),
+        // stepsValid: new FormControl(null, [Validators.required]),
       })
     });
     return new FormGroup(group);

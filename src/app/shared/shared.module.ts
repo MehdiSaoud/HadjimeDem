@@ -50,8 +50,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatProgressBarModule,
     MatSlideToggleModule,
     CdkStepperModule,
-    MatStepperModule,
-
+    MatStepperModule
   ],
 })
 export class SharedModule {}

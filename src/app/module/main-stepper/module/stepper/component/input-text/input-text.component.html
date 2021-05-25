@@ -1,4 +1,4 @@
-<div class="input-group">
-    <input class="text" [formControlName]="question.key"  [type]="question.type"  [id]="question.key">
+<div [formGroup]="form" class="input-group">
+    <input class="text" [id]='question.key' [formControlName]="question.key"  [type]="question.type"  [id]="question.key">
 </div>
 

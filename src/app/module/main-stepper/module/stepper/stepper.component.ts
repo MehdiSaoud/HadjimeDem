@@ -21,8 +21,8 @@ export class StepperComponent implements OnInit {
   @Input() mainForm: FormGroup = new FormGroup({});
   form: FormGroup = new FormGroup({});
 
-  constructor(private scs: StepperControlService) { 
-   
+  constructor(private scs: StepperControlService) {
+  
   }
 
   ngOnInit(): void {

@@ -1,10 +1,9 @@
 @import '../../../../../../../assets/sass/mixin.scss';
 
 .input-group {
-    display: flex;
-    flex-direction: column;
+    display: grid;
 }
 
-.text {
+.text { 
     @include inputForm(var(--inputHeight));
 }

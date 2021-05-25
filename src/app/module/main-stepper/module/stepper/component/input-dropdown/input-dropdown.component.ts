@@ -14,7 +14,6 @@ export class InputDropdownComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.question);
   }
 
 

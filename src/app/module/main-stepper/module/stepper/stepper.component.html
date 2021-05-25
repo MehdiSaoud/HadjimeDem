@@ -1,8 +1,8 @@
 <div class="wrapper-stepper">
   <p>stepper works!</p>
-  <!-- STEPPER -->
+   <!--STEPPER-->
   <mat-horizontal-stepper linear #stepper>
-    <!-- STEPS -->
+    <!-- STEPS-->
     <div *ngFor="let step of steps">
       <mat-step [stepControl]="mainForm.controls[step.parentStep]['controls'][step.id]" >
         <ng-template matStepLabel>{{step.title}}</ng-template>
@@ -14,4 +14,24 @@
     
   </mat-horizontal-stepper>
   
+</div> 
+
+<!--
+<div class="wrapper-stepper">
+  <p>stepper works!</p>
+   
+  <cdkStepper linear [type]="horizontal" #stepper>
+     
+    <div *ngFor="let step of steps">
+      <cdk-step [stepControl]="mainForm.controls[step.parentStep]['controls'][step.id]" >
+        <ng-template cdkStepLabel>{{step.title}}</ng-template>
+        <app-dynamic-form [step]='step' [mainForm]='mainForm'></app-dynamic-form>
+        <button cdkStepperNext [disabled]="!mainForm.controls[step.parentStep]['controls'][step.id].valid" (click)="isValid()">ETAPE SUIVANTE</button>
+      </cdk-step>
+      
+    </div>
+    
+  </cdkStepper>
+  
 </div>
+-->

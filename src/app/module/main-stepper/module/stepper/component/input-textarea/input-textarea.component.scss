@@ -1,11 +1,9 @@
-//@import '../../../../../../../settings';
+@import '../../../../../../../assets/sass/mixin.scss';
 
 .input-group {
-    display: flex;
-    flex-direction: column;
+    display: grid;
 }
 
-.text {
-    //@include inputForm(50px);
+.text { 
+    @include inputForm(var(50px));
 }
-

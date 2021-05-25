@@ -6,15 +6,18 @@ import { DynamicFormQuestionComponent } from './component/dynamic-form-question/
 import { InputTextComponent } from './component/input-text/input-text.component';
 import { InputDropdownComponent } from './component/input-dropdown/input-dropdown.component';
 import { InputTextareaComponent } from './component/input-textarea/input-textarea.component';
+import { InputSwitchComponent } from './component/input-switch/input-switch.component';
+
 
 @NgModule({
   declarations: [
     StepperComponent,
     DynamicFormComponent,
     DynamicFormQuestionComponent,
-    InputTextComponent, 
+    InputTextComponent,
     InputDropdownComponent, 
-    InputTextareaComponent
+    InputTextareaComponent,
+    InputSwitchComponent
   ],
   imports: [
     SharedModule

@@ -1,27 +1,23 @@
-<div  [formGroup]="form" class="input-group">
+<div  [formGroup]="form">
   <label [attr.for]="question.key">{{question.label}}</label>
   <div [ngSwitch]="question.controlType">
 
-  <input *ngSwitchCase="'textbox'" [formControlName]="question.key"
+    <!--
+        <input *ngSwitchCase="'textbox'" [formControlName]="question.key"
             [id]="question.key" [type]="question.type">
 
+        <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
+          <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+        </select>
+    -->
 
-    <!--<select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
-      <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
-    </select>-->
-
-  
-    <app-input-dropdown [question]="question"  [form]='form'  *ngSwitchCase="'dropdown'"></app-input-dropdown>
+    <app-input-dropdown [question]="question"  [form]='form' *ngSwitchCase="'dropdown'"></app-input-dropdown>
    
+    <app-input-text [question]="question"  [form]='form' *ngSwitchCase="'textbox'"></app-input-text>
 
-    <mat-slide-toggle
-          *ngSwitchCase="'switch'"
-          [formControlName]="question.key"
-          class="example-margin"
-          [color]="color"
-          [checked]="checked"
-    >
-    </mat-slide-toggle>
+    <app-input-textarea [question]="question" [form]='form' *ngSwitchCase="'textarea'"></app-input-textarea>
+
+    <app-input-switch [question]="question" [form]='form' *ngSwitchCase="'switch'"></app-input-switch>
 
   </div>
 

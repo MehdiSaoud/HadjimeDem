@@ -6,6 +6,7 @@ import { DropdownQuestion } from './interface/question-dropdown';
 import { QuestionBase } from './interface/question-base';
 import { TextboxQuestion } from './interface/question-textbox';
 import { SwitchQuestion } from './interface/question-switch';
+import { TextareaQuestion } from './interface/question-textarea';
 
 
 @Injectable({ providedIn: 'root'})

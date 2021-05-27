@@ -1,13 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-
-@mixin inputForm($height: 0) {
+@mixin inputContent($height: 0) {
     height: $height;
-    padding: 10px 14px;
-    margin-top: 12px;
+    padding: 12px 14px ;
+    margin-top: 8px;
     border: 0.5px solid #868686;
     box-sizing: border-box;
     border-radius: 2px;
     background-color: white;
     font-family: "Montserrat", sans-serif;
+    font-weight: 400;
     font-size: 13px;
 };
+
+
+
+@mixin titles($size: 0, $color: black, $marginTop: 0) {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: $size;
+    color: $color;
+    margin-top: $marginTop;
+}
+
+
+@mixin stepSubtitle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}

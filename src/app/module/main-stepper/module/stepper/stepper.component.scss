@@ -1,4 +1,52 @@
+@import '../../../../../assets/sass/mixin.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+
 .wrapper-stepper{
   height: 100%;
   background-color: steelblue;
+}
+
+
+ng-template {
+  @include titles(var(--sizeStepSubtitle), var(--stepSubtitleMargin));
+}
+
+h2 {
+  @include titles(var(--sizeStepSubtitle),black,  var(--stepSubtitleMargin));
+}
+
+.next-step {
+  height: 50px;
+  background-color: var(--secondColor);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  border-radius: 2px;
+}
+
+.next-step:hover {
+  cursor: pointer;
+}
+
+
+.next-step-container {
+  display: grid;
+  margin-top: 20px;
+  align-content: end;
+}
+
+
+.previous {
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  top: 12px;
+  left: 6px;
+}
+
+.previous:hover {
+  cursor: pointer;
 }

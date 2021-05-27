@@ -18,7 +18,7 @@ import { StepperControlService } from '@app/shared/services/step/steps-control.s
 export class StepperComponent implements OnInit {
 
   @Input() steps: StepInterface<string>[] = [];
-  @Input() mainForm: FormGroup = new FormGroup({});
+  @Input() mainForm: FormGroup = new FormGroup({}); 
   form: FormGroup = new FormGroup({});
 
   constructor(private scs: StepperControlService) {

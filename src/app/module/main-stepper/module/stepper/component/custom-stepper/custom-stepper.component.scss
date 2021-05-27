@@ -1,3 +1,6 @@
+@import '../../../../../../../assets/sass/mixin.scss';
+
+
 .example-container {
   border: 1px solid black;
   padding: 10px;
@@ -30,4 +33,9 @@
 .example-nav-button {
   background: transparent;
   border: 0;
+}
+
+
+h2 {
+  @include titles(var(--sizeStepTitle), var(--stepTitleColor), var(--stepTitleMargin))
 }

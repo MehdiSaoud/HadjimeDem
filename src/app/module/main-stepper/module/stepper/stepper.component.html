@@ -39,11 +39,12 @@
 <app-custom-stepper>
   <div *ngFor="let step of steps">
     <cdk-step [stepControl]="mainForm.controls[step.parentStep]['controls'][step.id]" >
-      <ng-template cdkStepLabel>{{step.title}}</ng-template>
+      <h2>{{step.title}}</h2>
       <app-dynamic-form [step]='step' [mainForm]='mainForm'></app-dynamic-form>
-      <button cdkStepperPrevious  (click)="isValid()">ETAPE PRECEDENTE</button>
-      <button cdkStepperNext [disabled]="!mainForm.controls[step.parentStep]['controls'][step.id].valid" (click)="isValid()">ETAPE SUIVANTE</button>
-    
+      <button class="previous" cdkStepperPrevious  (click)="isValid()"><img src="../../../../../assets/icons/precedent.svg" alt="precedent"></button>
+      <div class="next-step-container">
+        <button class="next-step" cdkStepperNext [disabled]="!mainForm.controls[step.parentStep]['controls'][step.id].valid" (click)="isValid()">ETAPE SUIVANTE</button>
+      </div>
     </cdk-step>
   </div>
 </app-custom-stepper>

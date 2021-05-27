@@ -5,7 +5,7 @@
 }
 
 .text { 
-    @include inputForm(var(--inputHeight));
+    @include inputContent(var(--inputHeight));
 }
 
 

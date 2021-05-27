@@ -1,0 +1,10 @@
+@import '../../../../../../../assets/sass/mixin.scss';
+
+
+label {
+    @include titles(var(--sizeInputTitle));
+}
+
+.form {
+    margin-top: var(--formMarginTop);
+}

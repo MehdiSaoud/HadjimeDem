@@ -7,6 +7,7 @@ import { InputTextComponent } from './component/input-text/input-text.component'
 import { InputDropdownComponent } from './component/input-dropdown/input-dropdown.component';
 import { InputTextareaComponent } from './component/input-textarea/input-textarea.component';
 import { InputSwitchComponent } from './component/input-switch/input-switch.component';
+import { CustomStepperComponent } from './component/custom-stepper/custom-stepper.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { InputSwitchComponent } from './component/input-switch/input-switch.comp
     InputTextComponent,
     InputDropdownComponent, 
     InputTextareaComponent,
-    InputSwitchComponent
+    InputSwitchComponent,
+    CustomStepperComponent
   ],
   imports: [
     SharedModule

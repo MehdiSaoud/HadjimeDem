@@ -1,8 +1,6 @@
-import { Directionality } from '@angular/cdk/bidi';
 import { CdkStepper } from '@angular/cdk/stepper';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { StepsService } from '../../../../../../shared/services/step/steps.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { StepInterface } from '@app/shared/services/step/interface/step';
 
 @Component({
   selector: 'app-custom-stepper',
@@ -11,13 +9,8 @@ import { StepsService } from '../../../../../../shared/services/step/steps.servi
   providers: [{ provide: CdkStepper, useExisting: CustomStepperComponent }]
 })
 export class CustomStepperComponent extends CdkStepper implements OnInit {
-  mainSteps$: Observable<any[]>;
 
-  constructor(stepService: StepsService, dir: Directionality,
-    changeDetectorRef: ChangeDetectorRef) { 
-    super(dir, changeDetectorRef);
-    this.mainSteps$ = stepService.getSteps();
-  }
+  @Input() parentStepTitle: StepInterface<string> | undefined;
 
   ngOnInit(): void {
   }

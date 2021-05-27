@@ -36,7 +36,7 @@
 </div>
 -->
 
-<app-custom-stepper>
+<app-custom-stepper [parentStepTitle]='parentStepTitle'>
   <div *ngFor="let step of steps">
     <cdk-step [stepControl]="mainForm.controls[step.parentStep]['controls'][step.id]" >
       <h2>{{step.title}}</h2>

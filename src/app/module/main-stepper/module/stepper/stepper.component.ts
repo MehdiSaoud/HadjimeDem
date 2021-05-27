@@ -19,6 +19,7 @@ export class StepperComponent implements OnInit {
 
   @Input() steps: StepInterface<string>[] = [];
   @Input() mainForm: FormGroup = new FormGroup({}); 
+  @Input() parentStepTitle: StepInterface<string> | undefined;
   form: FormGroup = new FormGroup({});
 
   constructor(private scs: StepperControlService) {

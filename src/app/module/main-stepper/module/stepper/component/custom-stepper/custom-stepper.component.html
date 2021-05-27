@@ -1,6 +1,6 @@
 <section class="container">
   <header>
-    <h2>Step {{selectedIndex + 1}}/{{steps.length}}</h2>
+    <h2>{{parentStepTitle}} {{selectedIndex + 1}}/{{steps.length}}</h2>
   </header>
 
   <div [style.display]="selected ? 'block' : 'none'">

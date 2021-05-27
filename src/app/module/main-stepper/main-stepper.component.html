@@ -5,7 +5,7 @@
     <div *ngFor="let step of steps">
       <mat-step [stepControl]="form.controls[step.id]" >
         <ng-template matStepLabel>{{step.title}}</ng-template>
-        <app-stepper [steps]='step.steps$ | async' [mainForm]='form'></app-stepper>
+        <app-stepper [parentStepTitle]="step.title" [steps]='step.steps$ | async' [mainForm]='form'></app-stepper>
       </mat-step>
     </div>
     <button mat-button matStepperNext>ETAPE SUIVANTE</button>

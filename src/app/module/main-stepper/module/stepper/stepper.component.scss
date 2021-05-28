@@ -19,6 +19,7 @@ h2 {
 
 .next-step {
   height: 50px;
+  width: 100%;
   background-color: var(--secondColor);
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -31,20 +32,12 @@ h2 {
   cursor: pointer;
 }
 
-
-.next-step-container {
-  display: grid;
-  margin-top: 20px;
-  align-content: end;
-}
-
-
 .previous {
   position: absolute;
   width: 6px;
   height: 12px;
-  top: 12px;
-  left: 6px;
+  top: 2.5vh;
+  left: 2vw;
 }
 
 .previous:hover {

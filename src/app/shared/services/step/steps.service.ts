@@ -53,7 +53,7 @@ export class StepsService {
         const steps: StepInterface<string>[] = [
           new StepInterface({
             id: 5,
-            title: 'Type d"habitation au départ',
+            title: "Type d'habitation au départ",
             parentStep: 1,
             order: 1
           }),

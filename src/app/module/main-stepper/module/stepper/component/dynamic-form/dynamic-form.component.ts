@@ -37,9 +37,7 @@ export class DynamicFormComponent implements OnInit {
       this.questions = result; 
       // Add the questions's FormGroup to nested steps related by id     
       this.mainForm.controls[this.step.parentStep]['controls'][this.step.id] = this.form
-    })
-  
-   
+    })   
   }
 
   onSubmit() {

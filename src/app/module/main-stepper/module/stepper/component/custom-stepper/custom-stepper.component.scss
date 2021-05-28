@@ -1,40 +1,16 @@
 @import '../../../../../../../assets/sass/mixin.scss';
 
 
-.example-container {
-  border: 1px solid black;
-  padding: 10px;
-  margin: 10px;
+.container {
+  height: 100%;
 }
 
-.example-step-navigation-bar {
+::ng-deep .custom-stepper-content{
+  height: 74vh;
   display: flex;
-  justify-content: flex-start;
-  margin-top: 10px;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
-.example-active {
-  color: blue;
-}
-
-.example-step {
-  background: transparent;
-  border: 0;
-  margin: 0 10px;
-  padding: 10px;
-  color: black;
-}
-
-.example-step.example-active {
-  color: blue;
-  border-bottom: 1px solid blue;
-}
-
-.example-nav-button {
-  background: transparent;
-  border: 0;
-}
-
 
 h2 {
   @include titles(var(--sizeStepTitle), var(--stepTitleColor), var(--stepTitleMargin))

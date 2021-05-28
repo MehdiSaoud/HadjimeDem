@@ -3,7 +3,7 @@
     <h2>{{parentStepTitle}} {{selectedIndex + 1}}/{{steps.length}}</h2>
   </header>
 
-  <div [style.display]="selected ? 'block' : 'none'">
+  <div class='custom-stepper-content'>
     <!-- Content from the CdkStep is projected here -->
     <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
   </div>

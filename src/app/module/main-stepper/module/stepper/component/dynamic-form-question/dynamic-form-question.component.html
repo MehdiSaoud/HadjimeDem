@@ -1,26 +1,14 @@
-<div class="form" [formGroup]="form">
-  <label [attr.for]="question.key">{{question.label}}</label>
+<div class="form" [formGroup]="form" [ngClass]='{"disabled":question.disabled}'>
+  <!-- QUESTION LABEL -->
+  <label [attr.for]="question.key" >{{question.label}}</label>
+  <!-- QUESTION INPUT -->
   <div [ngSwitch]="question.controlType">
-
-    <!--
-        <input *ngSwitchCase="'textbox'" [formControlName]="question.key"
-            [id]="question.key" [type]="question.type">
-
-        <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
-          <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
-        </select>
-    -->
-
     <app-input-dropdown [question]="question"  [form]='form' *ngSwitchCase="'dropdown'"></app-input-dropdown>
-   
     <app-input-text [question]="question"  [form]='form' *ngSwitchCase="'textbox'"></app-input-text>
-
     <app-input-textarea [question]="question" [form]='form' *ngSwitchCase="'textarea'"></app-input-textarea>
-
-    <app-input-switch [question]="question" [form]='form' *ngSwitchCase="'switch'"></app-input-switch>
-
+    <app-input-switch (updatedSwitchRelated)="updateRelatedFromSwitch($event)" [question]="question" [form]='form' *ngSwitchCase="'switch'"></app-input-switch>
+    <app-input-check-box [question]="question" [form]='form' *ngSwitchCase="'checkbox'"></app-input-check-box>
   </div>
-
   <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
 </div>
 

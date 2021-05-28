@@ -1,0 +1,11 @@
+img {
+  width: 30vw;
+}
+
+::ng-deep.mat-checkbox-inner-container  {
+  display: none !important;
+}
+
+.checked {
+  border: 1px solid blue;
+}

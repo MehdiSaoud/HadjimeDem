@@ -10,6 +10,8 @@ export class QuestionBase<T> {
   type: string;
   options: {key: string, value: string}[];
   parentStep: number;
+  disabled: boolean;
+  img: string;
 
   constructor(options: {
       id?: number,
@@ -23,6 +25,8 @@ export class QuestionBase<T> {
       type?: string;
       options?: {key: string, value: string}[];
       parentStep?: number;
+      disabled?: boolean;
+      img?: string;
     } = {}) {
     this.id = options.id || 0,
     this.value = options.value!;
@@ -35,6 +39,8 @@ export class QuestionBase<T> {
     this.type = options.type || '';
     this.options = options.options || [];
     this.parentStep = options.parentStep || 0;
+    this.disabled = options.disabled || false;
+    this.img = options.img || '';
   }
 }
 

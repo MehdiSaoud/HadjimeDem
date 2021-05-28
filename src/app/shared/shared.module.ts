@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   exports: [
@@ -50,7 +51,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatProgressBarModule,
     MatSlideToggleModule,
     CdkStepperModule,
-    MatStepperModule
+    MatStepperModule,
+    MatCheckboxModule,
   ],
 })
 export class SharedModule {}

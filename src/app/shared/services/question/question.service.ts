@@ -7,7 +7,7 @@ import { QuestionBase } from './interface/question-base';
 import { TextboxQuestion } from './interface/question-textbox';
 import { SwitchQuestion } from './interface/question-switch';
 import { TextareaQuestion } from './interface/question-textarea';
-import { checkBoxQuestion } from './interface/question-checkbox';
+import { radioGroupQuestion } from './interface/question-radiogroup';
 
 
 @Injectable({ providedIn: 'root'})
@@ -21,24 +21,17 @@ export class QuestionService {
       step5: () => {
         const questions: QuestionBase<string>[] = [
 
-          new checkBoxQuestion({
-            key: 'house',
-            label: "Maison",
-            img: "house-checkbox.png",
+          new radioGroupQuestion({
+            key: 'dwelling-type',
+            label: "",
+            options: [
+              {key:'house',img: "house-checkbox.png",  value: 'House'},
+              {key: 'appartment',img: "appartment-checkbox.png",  value: 'Appartment'},
+            ],
             order: 1,
-            required: false,
+            required: true,
             parentStep: 5
-          }),
-
-          new checkBoxQuestion({
-            key: 'appartment',
-            label: "Appartement",
-            img: "appartment-checkbox.png",
-            order: 2,
-            required: false,
-            parentStep: 5
-          }),
-          
+          }),    
         ];
         return of(questions.sort((a, b) => a.order - b.order));
       },
@@ -75,6 +68,7 @@ export class QuestionService {
               {key: '10 +',  value: '10 +'},
             ],
             order: 2,
+            required: true,
             parentStep: 7
           }),
           new SwitchQuestion({

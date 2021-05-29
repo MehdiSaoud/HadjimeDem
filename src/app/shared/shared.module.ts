@@ -26,6 +26,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 @NgModule({
   exports: [
@@ -53,6 +55,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     CdkStepperModule,
     MatStepperModule,
     MatCheckboxModule,
+    MatRadioModule,
   ],
 })
 export class SharedModule {}

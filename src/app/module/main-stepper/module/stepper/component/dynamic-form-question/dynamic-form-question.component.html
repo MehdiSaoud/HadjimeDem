@@ -7,8 +7,8 @@
     <app-input-text [question]="question"  [form]='form' *ngSwitchCase="'textbox'"></app-input-text>
     <app-input-textarea [question]="question" [form]='form' *ngSwitchCase="'textarea'"></app-input-textarea>
     <app-input-switch (updatedSwitchRelated)="updateRelatedFromSwitch($event)" [question]="question" [form]='form' *ngSwitchCase="'switch'"></app-input-switch>
-    <app-input-check-box [question]="question" [form]='form' *ngSwitchCase="'checkbox'"></app-input-check-box>
+    <app-input-radio-group [question]="question" [form]='form' *ngSwitchCase="'radiogroup'"></app-input-radio-group>
   </div>
-  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+  <div class="errorMessage" *ngIf="!isValid && this.form.controls[this.question.key].touched ">{{question.label}} is required</div>
 </div>
 

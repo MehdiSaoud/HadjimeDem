@@ -27,6 +27,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -56,6 +58,9 @@ import { MatRadioModule } from '@angular/material/radio';
     MatStepperModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
+
 })
 export class SharedModule {}

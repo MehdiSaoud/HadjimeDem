@@ -9,6 +9,8 @@ import { InputTextareaComponent } from './component/input-textarea/input-textare
 import { InputSwitchComponent } from './component/input-switch/input-switch.component';
 import { CustomStepperComponent } from './component/custom-stepper/custom-stepper.component';
 import { InputRadioGroupComponent } from './component/input-radio-group/input-radio-group.component';
+import { SummaryStepComponent } from './component/summary-step/summary-step.component';
+import { InputDatepickerComponent } from './component/input-datepicker/input-datepicker.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { InputRadioGroupComponent } from './component/input-radio-group/input-ra
     InputTextareaComponent,
     InputSwitchComponent,
     CustomStepperComponent,
-    InputRadioGroupComponent
+    InputRadioGroupComponent,
+    SummaryStepComponent,
+    InputDatepickerComponent
   ],
   imports: [
     SharedModule

@@ -8,6 +8,7 @@ export class StepInterface<T> {
   parentStep: number;
   formGroup: FormControl;
   order: number;
+  type: string;
 
   constructor(options: {
       id?: number;
@@ -16,6 +17,7 @@ export class StepInterface<T> {
       parentStep?: number;
       formGroup?: FormControl;
       order?: number;
+      type?: string;
     } = {}) {
     this.id = options.id || 0;
     this.title = options.title || '';
@@ -23,5 +25,6 @@ export class StepInterface<T> {
     this.parentStep = options.parentStep! ;
     this.formGroup = options.formGroup! || undefined;
     this.order = options.order === undefined ? 1 : options.order;
+    this.type = options.type || 'question';
   }
 }

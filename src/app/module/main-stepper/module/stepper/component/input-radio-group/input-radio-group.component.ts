@@ -16,22 +16,24 @@ export class InputRadioGroupComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.question);
     this.initOptions()
-    console.log(this.form);
   }
 
+  /**
+   * Update option check
+   * @param $event 
+   * @param option 
+   */
   onChange($event:any,option:any){
     if(option.checked === false){
       option.checked = true;
+      // Desactivate check 
       this.question.options.forEach((otherOption:any) => {
         if(otherOption !== option){
           otherOption.checked = false;
         }
       });
-    } 
-    console.log(this.form);
-    
+    }     
   }
 
   /**

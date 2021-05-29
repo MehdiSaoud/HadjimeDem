@@ -32,12 +32,12 @@ export class StepsService {
           steps$: this.getChildrenSteps('step'+ 3),
           order: 3
         }),
-        // new StepInterface({
-        //   id: 4,
-        //   title: 'Devis',
-        //   steps$: this.getChildrenSteps('step'+ 4),
-        //   order: 4
-        // }),  
+        new StepInterface({
+          id: 4,
+          title: 'Devis',
+          steps$: this.getChildrenSteps('step'+ 4),
+          order: 4
+        })
       ];
       
       return of(parentSteps.sort((a, b) => a.order - b.order)); 
@@ -76,19 +76,19 @@ export class StepsService {
         const steps: StepInterface<string>[] = [
           new StepInterface({
             id: 8,
-            title: 'Arrivé 1/3',
+            title: "Type d'habitation à l'arrivé",
             parentStep: 2,
             order: 1
           }),
           new StepInterface({
             id: 9,
-            title: 'Arrivé 2/3',
+            title: "Saisissez votre adresse d'arrivé",
             parentStep: 2,
             order: 2
           }),
           new StepInterface({
             id: 10,
-            title: 'Arrivé 3/3',
+            title: 'Accès',
             parentStep: 2,
             order: 3
           }),
@@ -99,10 +99,10 @@ export class StepsService {
         const steps: StepInterface<string>[] = [
           new StepInterface({
             id: 11,
-            title: 'Déménagement 1/3',
+            title: 'Estimation du volume',
             parentStep: 3,
             order: 1
-          }),
+          })
           // new StepInterface({
           //   id: 12,
           //   title: 'Déménagement 2/3',
@@ -122,22 +122,16 @@ export class StepsService {
         const steps: StepInterface<string>[] = [
           new StepInterface({
             id: 14,
-            title: 'Devis 1/3',
-            parentStep: 3,
+            title: 'Recevoir mon devis',
+            parentStep: 4,
             order: 1
           }),
           new StepInterface({
-            id: 15,
-            title: 'Devis 2/3',
-            parentStep: 3,
-            order: 2
-          }),
-          new StepInterface({
-            id: 16,
-            title: 'Devis 3/3',
-            parentStep: 3,
-            order: 3
-          }),
+            id: 14,
+            title: 'Récapitulatif',
+            parentStep: 4,
+            order: 1
+          })
         ];
         return of(steps.sort((a, b) => a.order - b.order));
       },

@@ -99,6 +99,14 @@ export class QuestionService {
             order: 3,
             parentStep: 7
           }),
+          new TextareaQuestion({
+            key: 'acces',
+            label: 'Informations supplémentaires sur l\'accès',
+            value: '',
+            required: false,
+            order: 4,
+            parentStep: 7
+          }),
         ];
         return of(questions.sort((a, b) => a.order - b.order));
       },
@@ -106,19 +114,23 @@ export class QuestionService {
       step8: () => {
         const questions: QuestionBase<string>[] = [
 
-          new DropdownQuestion({
-            key: 'brave',
-            label: 'Bravery Rating',
-            options: [
-              {key: 'solid',  value: 'Solid'},
-              {key: 'great',  value: 'Great'},
-              {key: 'good',   value: 'Good'},
-              {key: 'unproven', value: 'Unproven'}
-            ],
-            order: 3,
+          new checkBoxQuestion({
+            key: 'house',
+            label: "Maison",
+            img: "house-checkbox.png",
+            order: 1,
+            required: false,
             parentStep: 8
           }),
-          
+
+          new checkBoxQuestion({
+            key: 'appartment',
+            label: "Appartement",
+            img: "appartment-checkbox.png",
+            order: 2,
+            required: false,
+            parentStep: 8
+          }),
 
         ];
         return of(questions.sort((a, b) => a.order - b.order));
@@ -133,51 +145,30 @@ export class QuestionService {
             order: 1,
             parentStep: 9
           }),
+          
         ];
         return of(questions.sort((a, b) => a.order - b.order));
       },
       step10: () => {
         const questions: QuestionBase<string>[] = [    
-          new TextboxQuestion({
-            id: 1,
-            key: 'adress',
-            label: '',
-            value: '',
-            required: true,
-            order: 1,
-            parentStep: 10
-          }),
           new DropdownQuestion({
             id: 2,
-            key: 'appartment-access',
+            key: 'access',
             label: 'Etage',
             options: [
               {key: 'rdc',  value: 'rdc'},
-              {key: '1',  value: '1er étage'},
-              {key: '2',  value: '2e étage'},
-              {key: '3',  value: '3e étage'},
-              {key: '4',  value: '4e étage'},
-              {key: '5',  value: '5e étage'},
-              {key: '6',  value: '6e étage'},
-              {key: '7',  value: '7e étage'},
-              {key: '8',  value: '8e étage'},
-              {key: '9',  value: '9e étage'},
-              {key: '10 +',  value: '10e étage et +'},
+              {key: '1',  value: '1'},
+              {key: '2',  value: '2'},
+              {key: '3',  value: '3'},
+              {key: '4',  value: '4'},
+              {key: '5',  value: '5'},
+              {key: '6',  value: '6'},
+              {key: '7',  value: '7'},
+              {key: '8',  value: '8'},
+              {key: '9',  value: '9'},
+              {key: '10 +',  value: '10 +'},
             ],
             order: 2,
-            parentStep: 10
-          }),
-          new DropdownQuestion({
-            id: 3,
-            key: 'appartment-access',
-            label: 'Etage',
-            options: [
-              {key: 'rdc',  value: 'La maison est de plain pied'},
-              {key: '1',  value: 'La maison est sur 1 étage'},
-              {key: '2',  value: 'La maison est sur 2 étages'},
-              {key: '3',  value: 'La maison est sur 3 étages'},
-            ],
-            order: 1,
             parentStep: 10
           }),
           new SwitchQuestion({
@@ -191,15 +182,24 @@ export class QuestionService {
             parentStep: 10
           }),
           new DropdownQuestion({
-            id: 3,
-            key: 'elevator-access',
+            id: 5,
+            key: 'elevator-access-depart',
             label: 'Vos meubles rentrent-ils dans l’ascenceur ?',
             options: [
               {key: '1',  value: 'Oui'},
               {key: '2',  value: 'Non'},
               {key: '3',  value: 'En grande partie'},
             ],
+            disabled: true,
             order: 3,
+            parentStep: 10
+          }),
+          new TextareaQuestion({
+            key: 'acces',
+            label: 'Informations supplémentaires sur l\'accès',
+            value: '',
+            required: false,
+            order: 4,
             parentStep: 10
           }),
         ];
@@ -250,12 +250,11 @@ export class QuestionService {
             parentStep: 11
           }),
           new SwitchQuestion({
-            id: 4,
+            id: 358,
             key: 'elevator',
             label: 'Disposez-vous d’un ascenseur ?',
             value: '',
             relatedTo:[5],
-            required: true,
             order: 2,
             parentStep: 11
           }),
@@ -274,26 +273,41 @@ export class QuestionService {
         ];
         return of(questions.sort((a, b) => a.order - b.order));
       },
-      // step8: () => {
-      //   const steps: StepInterface<string>[] = [
-      //     new StepInterface({
-      //       id: 1,
-      //       title: 'Devis 1/3',
-      //       order: 1
-      //     }),
-      //     new StepInterface({
-      //       id: 2,
-      //       title: 'Devis 2/3',
-      //       order: 2
-      //     }),
-      //     new StepInterface({
-      //       id: 3,
-      //       title: 'Devis 3/3',
-      //       order: 3
-      //     }),
-      //   ];
-      //   return of(steps.sort((a, b) => a.order - b.order));
-      // },
+      step14: () => {
+        const questions: QuestionBase<string>[] = [
+          new TextboxQuestion({
+            id: 1,
+            key: 'firstname',
+            label: 'Prenom',
+            order: 1,
+            parentStep: 12
+          }),
+          new TextboxQuestion({
+            id: 1,
+            key: 'name',
+            label: 'Nom',
+            order: 1,
+            parentStep: 12
+          }),
+          new TextboxQuestion({
+            id: 3,
+            key: 'mail-adress',
+            type: 'mail',
+            label: 'E-mail',
+            order: 3,
+            parentStep: 12
+          }),
+          new TextboxQuestion({
+            id: 2,
+            key: 'phone-numer',
+            type: 'tel',
+            label: 'Numéro de téléphone',
+            order: 2,
+            parentStep: 12
+          })
+        ];
+        return of(questions.sort((a, b) => a.order - b.order));
+      },
       // step9: () => {
       //   const steps: StepInterface<string>[] = [
       //     new StepInterface({

@@ -1,4 +1,4 @@
-<div class="form" [formGroup]="form" [ngClass]='{"disabled":question.disabled}'>
+<div class="question" [formGroup]="form" [ngClass]='{"disabled":question.disabled, "switch-wrapper":question.controlType==="switch"}'>
   <!-- QUESTION LABEL -->
   <label [attr.for]="question.key" >{{question.label}}</label>
   <!-- QUESTION INPUT -->

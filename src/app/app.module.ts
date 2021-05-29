@@ -20,6 +20,7 @@ import { NextStepComponent } from './module/main-stepper/module/stepper/componen
 
 /*** SERVICES ***/
 import { AuthService } from "./shared/services";
+import { EstimationComponent } from './estimation/estimation.component';
 
 export function appInitializerFactory(authService: AuthService) {
   return () => authService.checkTheUserOnTheFirstLoad();
@@ -33,7 +34,7 @@ export function appInitializerFactory(authService: AuthService) {
     AppRoutingModule,
     MainStepperModule,
   ],
-  declarations: [AppComponent, HeaderComponent, MainComponent],
+  declarations: [AppComponent, HeaderComponent, MainComponent, EstimationComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

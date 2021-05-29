@@ -5,5 +5,5 @@
 }
 
 .text { 
-    @include inputContent(var(50px));
+    @include inputContent(50px);
 }

@@ -5,10 +5,16 @@ label {
     @include titles(var(--sizeInputTitle));
 }
 
-.form {
-    margin-top: var(--formMarginTop);
+.question {
+    margin-top: var(--questionMarginTop);
 }
 
-.disabled{
+.disabled {
     display: none;
+}
+
+.switch-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

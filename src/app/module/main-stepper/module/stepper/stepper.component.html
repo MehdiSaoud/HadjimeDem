@@ -36,16 +36,16 @@
 </div>
 -->
 
-<app-custom-stepper [parentStepTitle]='parentStepTitle'>
+<app-custom-stepper [parentStepTitle]='parentStepTitle' #cdkStepper>
   <div *ngFor="let step of steps">
-    <cdk-step [stepControl]="mainForm.controls[step.parentStep]['controls'][step.id]" >
+    <cdk-step [stepControl]="mainForm.controls[step.parentStep]['controls'][step.id]">
       <div>
         <h2>{{step.title}}</h2>
         <app-dynamic-form [step]='step'  [mainForm]='mainForm'></app-dynamic-form>
-        <button class="previous" cdkStepperPrevious  (click)="isValid()"><img src="../../../../../assets/icons/precedent.svg" alt="precedent"></button>
+        <button class="previous"   (click)="previousStep(mainForm.controls[step.parentStep]['controls'][step.id])"><img src="../../../../../assets/icons/precedent.svg" alt="precedent"></button>
       </div>
       <div class="next-step-container">
-        <button class="next-step" cdkStepperNext [disabled]="!mainForm.controls[step.parentStep]['controls'][step.id].valid" (click)="isValid()">ETAPE SUIVANTE</button>
+        <button class="next-step"   (click)="nextStep(mainForm.controls[step.parentStep]['controls'][step.id])">ETAPE SUIVANTE</button>
       </div>
     </cdk-step>
   </div>

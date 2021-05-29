@@ -1,0 +1,10 @@
+<div [formGroup]="form" class="input-group">
+  <mat-radio-group aria-label="Select an option" [id]='question.key' [formControlName]='question.key'>
+    <mat-radio-button (change)='onChange($event,option)' *ngFor='let option of question.options' value="{{option.value}}"><img  
+      src="../../../../../../../assets/img/{{option.img}}"
+      [ngClass]='{"checked": option.checked,"not-checked": !option.checked}' class='radio-img'>
+      <span class='radio-label'>{{option.value}}</span>
+    </mat-radio-button>
+  </mat-radio-group>
+</div>
+

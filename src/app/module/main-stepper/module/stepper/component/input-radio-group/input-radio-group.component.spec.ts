@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputCheckBoxComponent } from './input-check-box.component';
+import { InputRadioGroupComponent } from './input-radio-group.component';
 
 describe('InputCheckBoxComponent', () => {
-  let component: InputCheckBoxComponent;
-  let fixture: ComponentFixture<InputCheckBoxComponent>;
+  let component: InputRadioGroupComponent;
+  let fixture: ComponentFixture<InputRadioGroupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputCheckBoxComponent ]
+      declarations: [ InputRadioGroupComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InputCheckBoxComponent);
+    fixture = TestBed.createComponent(InputRadioGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,13 +1,9 @@
 <div>
   <!-- FORM -->
-  <form  (ngSubmit)="onSubmit()">
+  <form>
     <!-- QUESTIONS -->
     <div *ngFor="let question of questions" class="form-row">
       <app-dynamic-form-question  [questions]='questions' [question]="question" [form]="form"></app-dynamic-form-question>
     </div>
   </form>
-
-  <div *ngIf="payLoad" class="form-row">
-    <strong>Saved the following values</strong><br>{{payLoad}}
-  </div>
 </div>

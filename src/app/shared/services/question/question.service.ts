@@ -198,8 +198,9 @@ export class QuestionService {
           new DatePickerQuestion({
             id: 1,
             key: 'date',
-            label: 'Quand souhaitez vous déménager',
-            required: false,
+            label: 'Selectionnez une date',
+            value: '',
+            required: true,
             order: 1,
             parentStep: 11
           })        

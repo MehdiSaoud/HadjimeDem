@@ -7,22 +7,30 @@
   }
 
   ::ng-deep .mat-horizontal-content-container {
-    height: 80%;
+    padding: 0px 4.4vw 1.1vh 4.4vw;
   }
 
   ::ng-deep .mat-step-header .mat-step-icon-selected {
     background-color: var(--mainColor); 
+    border: 1px solid var(--mainColor);
   }
   ::ng-deep .mat-step-header .mat-step-icon-selected.mat-step-icon-state-chat {
-    background-color: var(--mainColor); 
+    background-color: var(--mainColor);
+    border: 1px solid var(--mainColor); 
   }
 
   ::ng-deep .mat-step-header .mat-step-icon-state-done {
-    background-color: var(--mainColor); 
+    background-color: var(--mainColor);
+    border: 1px solid var(--mainColor); 
   }
   ::ng-deep .mat-step-header .mat-step-icon-state-chat {
     background-color: transparent;
     border: 1px solid grey;
+  }
+
+  ::ng-deep .mat-step-icon {
+    width: 17px;
+    height: 17px;
   }
  
   ::ng-deep .mat-step-text-label {
@@ -34,5 +42,23 @@
     text-align: center;
     color: #000000;
   }
+
+  ::ng-deep .mat-stepper-label-position-bottom .mat-horizontal-stepper-header, .mat-vertical-stepper-header {
+    padding:  5vw 5vw 3.1vh 2.8vh;
+  }
+
+  ::ng-deep .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before, [dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before {
+    display: none;
+  }
+
+  ::ng-deep .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after, [dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after {
+    display: none;
+  }
+
+  ::ng-deep .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after, [dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after {
+    display: none;
+  }
+
+ 
 
 }

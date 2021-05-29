@@ -3,13 +3,15 @@
 
 .container {
   height: 100%;
+  
 }
 
 ::ng-deep .custom-stepper-content{
-  height: 74vh;
+  height: 72vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
 
 h2 {

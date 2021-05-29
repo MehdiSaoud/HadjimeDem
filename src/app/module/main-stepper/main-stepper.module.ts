@@ -7,6 +7,7 @@ import { MainStepperComponent } from './main-stepper.component';
 /* Module */
 import { StepperModule } from './module/stepper/stepper.module';
 import { SharedModule } from '../../shared/shared.module';
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 
 @NgModule({
@@ -15,6 +16,13 @@ import { SharedModule } from '../../shared/shared.module';
     SharedModule,
     StepperModule
   ],
-  exports: [ MainStepperComponent ]
+  exports: [ MainStepperComponent ],
+
+  providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: { displayDefaultIndicatorType: false }
+    }
+  ]
 })
 export class MainStepperModule { }

@@ -1,13 +1,26 @@
 <div class="wrapper-main-stepper">
   <!-- STEPPER -->
-  <mat-horizontal-stepper linear #mainStepper>
+  <mat-horizontal-stepper linear labelPosition="bottom" #mainStepper>
     <!-- STEPS -->
-    <div *ngFor="let step of steps">
-      <mat-step [stepControl]="form.controls[step.id]" >
+
+      <mat-step  *ngFor="let step of steps" [stepControl]="form.controls[step.id]" state='chat'>
+        <ng-template matStepperIcon="phone">
+          <mat-icon>call_end</mat-icon>
+        </ng-template>
         <ng-template matStepLabel>{{step.title}}</ng-template>
         <app-stepper (onStepsValid)='changeStep($event)'[parentStepTitle]="step.title" [steps]='step.steps$ | async' [mainForm]='form'></app-stepper>
+        
       </mat-step>
-    </div>
+  
     <button mat-button matStepperNext>ETAPE SUIVANTE</button>
+    <ng-template matStepperIcon="edit">
+
+    </ng-template>
+    <ng-template matStepperIcon="done">
+
+    </ng-template>
+    <ng-template matStepperIcon="chat">
+
+    </ng-template>
   </mat-horizontal-stepper>
 </div>          

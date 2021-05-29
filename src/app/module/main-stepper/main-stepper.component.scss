@@ -10,4 +10,29 @@
     height: 80%;
   }
 
+  ::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color: var(--mainColor); 
+  }
+  ::ng-deep .mat-step-header .mat-step-icon-selected.mat-step-icon-state-chat {
+    background-color: var(--mainColor); 
+  }
+
+  ::ng-deep .mat-step-header .mat-step-icon-state-done {
+    background-color: var(--mainColor); 
+  }
+  ::ng-deep .mat-step-header .mat-step-icon-state-chat {
+    background-color: transparent;
+    border: 1px solid grey;
+  }
+ 
+  ::ng-deep .mat-step-text-label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #000000;
+  }
+
 }

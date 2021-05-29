@@ -1,6 +1,6 @@
 <div class="question" [formGroup]="form" [ngClass]='{"disabled":question.disabled, "switch-wrapper":question.controlType==="switch"}'>
   <!-- QUESTION LABEL -->
-  <label [attr.for]="question.key" >{{question.label}}</label>
+  <label class="question--label" [attr.for]="question.key" >{{question.label}}</label>
   <!-- QUESTION INPUT -->
   <div [ngSwitch]="question.controlType">
     <app-input-dropdown [question]="question"  [form]='form' *ngSwitchCase="'dropdown'"></app-input-dropdown>

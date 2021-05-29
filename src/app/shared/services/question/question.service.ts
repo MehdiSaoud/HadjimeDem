@@ -165,7 +165,7 @@ export class QuestionService {
             label: 'Disposez-vous d’un ascenseur ?',
             value: '',
             relatedTo:[5],
-            required: true,
+            required: false,
             order: 2,
             parentStep: 10
           }),
@@ -199,8 +199,7 @@ export class QuestionService {
             id: 1,
             key: 'date',
             label: 'Quand souhaitez vous déménager',
-            value: '',
-            required: true,
+            required: false,
             order: 1,
             parentStep: 11
           })        

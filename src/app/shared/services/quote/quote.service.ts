@@ -18,7 +18,7 @@ export class QuoteService {
 
    postQuote(quote:object) {
     return  this.httpClient.post(
-      this.base_url + 'quote/' + quote,
+      this.base_url + 'quote', quote,
       this.httpOptions
     );
   }

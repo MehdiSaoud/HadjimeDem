@@ -2,17 +2,19 @@ const express = require('express');
 const quoteCtrl = require('../controllers/quote.controller');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
+const getQuotePrice = require('../middleware/get-quote-price')
 module.exports = router;
 
 
 
 router.route('/')
-.post(asyncHandler(insertQuote))
+.post(getQuotePrice,asyncHandler(insertQuote))
 .get(asyncHandler(getQuotes));
 
 
 
 async function insertQuote(req, res) {
+  console.log('ouwoo2',req);
   let quote = await quoteCtrl.insert(req.body);
   res.json(quote);
 }

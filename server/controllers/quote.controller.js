@@ -4,9 +4,12 @@ const Quote = require('../models/quote.model');
 const quoteSchema = Joi.object().keys({
 
   volume: Joi.number().required(),
-  relocationDate: Joi.date().required(),
+  relocationDescription: Joi.string().optional(),
   createdAt: Joi.date().optional(),
-  relocationDescription: Joi.string().required(),
+  relocationDate: Joi.object().keys({
+    start: Joi.date().required(),
+    end: Joi.date().required(),
+  }).required(),
   state: Joi.string().allow('Envoyé', 'Relance', 'Validé', 'Refusé').required(),
   recoveryCount: Joi.number().required(),
   lastRecoveryDateCall: Joi.date().optional(),

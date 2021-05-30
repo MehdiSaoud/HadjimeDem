@@ -1,0 +1,12 @@
+<div [formGroup]="form">
+    <mat-form-field appearance="outline" [style.width.%]='100'>
+        <mat-select [id]='question.key' [formControlName]='question.key'>
+          <mat-option *ngFor="let opt of question.options" [value]="opt.key">
+            {{opt.value}}
+          </mat-option>
+        </mat-select>
+        <mat-hint *ngIf='!this.form.controls[this.question.key].valid  && this.form.controls[this.question.key].touched '>{{question.errorMsg}}</mat-hint>
+      </mat-form-field>
+</div>
+
+

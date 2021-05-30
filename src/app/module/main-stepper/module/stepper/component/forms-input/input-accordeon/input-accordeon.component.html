@@ -1,0 +1,20 @@
+
+
+
+<div [formGroup]="form" class='accordeon'>
+    <mat-accordion multi>
+      <mat-expansion-panel *ngFor="let opt of question.options; let index = index;" [expanded]='expandedState === index' (opened)='changeExpandedPanel(index)'  [ngClass]='{"accordeon--expanded":expandedState === index}'>
+        <mat-expansion-panel-header >
+          <mat-panel-title class='accordeon--title'>
+            {{opt.value}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+          <mat-form-field appearance="outline" class='accordeon-mat-form-field'>
+            <input class='accordeon--input' matInput [id]='question.key' placeholder="Indiquez votre surface en {{opt.key}}" [formControlName]='question.key' type="number" min="1">
+          </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <div class="accordeon--error-message" *ngIf="!this.form.valid && this.form.touched ">{{question.errorMsg}}</div>
+</div>
+
+

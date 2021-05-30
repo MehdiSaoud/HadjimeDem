@@ -1,0 +1,8 @@
+@import '../../../../../../../../assets/sass/mixin.scss';
+
+
+.text { 
+    @include formInput(var(--inputHeight))
+}
+
+

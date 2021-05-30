@@ -40,8 +40,6 @@ export class DynamicFormComponent implements OnInit {
     })   
   }
 
-  onSubmit() {
-     
-  }
+ 
 
 }

@@ -29,14 +29,6 @@ const QuoteSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    city: {
-      type: String,
-      required: true,
-    },
-    zipCode: {
-      type: Number,
-      required: true,
-    },
     floor: {
       type: Number,
       required: true,
@@ -64,14 +56,6 @@ const QuoteSchema = new mongoose.Schema({
     },
     address: {
       type: String,
-      required: true,
-    },
-    city: {
-      type: String,
-      required: true,
-    },
-    zipCode: {
-      type: Number,
       required: true,
     },
     floor: {
@@ -131,7 +115,7 @@ const QuoteSchema = new mongoose.Schema({
   state: {
     type: String,
     required: true,
-    enum: ['Envoyé', 'À relancer', 'Validé', 'Refusé']
+    enum: ['Envoyé', 'Relance', 'Validé', 'Refusé']
   },
   lastRecoveryDateCall: {
     type: Date,

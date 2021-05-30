@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { Observable } from "rxjs";
+import { CdkStepper } from "@angular/cdk/stepper";
 
 /*** INTERFACE ***/
 import { StepInterface } from "@app/shared/services/step/interface/step";
-import { QuestionBase } from "@app/shared/services/question/interface/question-base";
 
 /*** SERVICE ***/
 import { StepperControlService } from "@app/shared/services/step/steps-control.service";
-import { MatStep, MatStepper } from "@angular/material/stepper";
-import { CdkStepper } from "@angular/cdk/stepper";
+import { QuoteService } from '../../../../shared/services/quote/quote.service';
+
+
 
 @Component({
   selector: "app-stepper",
@@ -24,9 +24,10 @@ export class StepperComponent implements OnInit {
   @Input() parentStepTitle: StepInterface<string> | undefined;
   @Output() onStepsValid = new EventEmitter();
   form: FormGroup = new FormGroup({});
+  quote: any;
 
 
-  constructor(private scs: StepperControlService) {}
+  constructor(private scs: StepperControlService, private quoteService:QuoteService) {}
 
   ngOnInit(): void {
     // Init FormGroup for each steps
@@ -47,16 +48,20 @@ export class StepperComponent implements OnInit {
    * Move to next step
    * If last step Emit event to change main-stepper step
    */
-  nextStep(step: FormGroup) {
+  nextStep(step: FormGroup,stepId: number) {  
     let index = this.cdkStepper.selectedIndex
     index++
-    if (step.valid) {
+    if (step.valid && stepId !== 14) {
       this.cdkStepper.next();
-      if(this.isStepperValid() && index === this.cdkStepper.steps.length){
+      if(this.isStepperValid() && index === this.cdkStepper.steps.length ){
         this.onStepsValid.emit('next')
       }
     } else {
       this.markFormGroupTouched(step);
+    } 
+
+    if(step.valid && stepId === 14){
+      this.getQuote()
     }
   }
 
@@ -74,16 +79,15 @@ export class StepperComponent implements OnInit {
   } 
 
   isStepperValid() {
-    console.log(this.form);
-    console.log("ouwoo");
-    console.log(this.cdkStepper);
-
     let validCount = 0;
     let valid;
     this.steps.forEach((step) => {
-      this.mainForm.controls[step.parentStep];
+      
+     
       let formGroup1 = this.mainForm.controls[step.parentStep] as FormGroup;
       let formGroup2 = formGroup1.controls[step.id] as FormGroup;
+      console.log(formGroup1);
+      console.log(formGroup2.value);
       if (formGroup2.valid) {
         validCount++;
       }
@@ -94,11 +98,21 @@ export class StepperComponent implements OnInit {
         formGroup1.get("stepsValid")?.setValue(false);
         valid = false
       }
-    });
-
+    });  
     return valid;
   }
 
+  getQuote(){
+    console.log(this.mainForm);
+    let quoteToPost = {}
+    this.quoteService.postQuote(quoteToPost).subscribe((quote:any)=>{
+      console.log(quote);
+      
+    })
+
+    return this.quote = false;
+    
+  }
   /**
    * Marks all controls in a form group as touched
    * @param formGroup - The form group to touch

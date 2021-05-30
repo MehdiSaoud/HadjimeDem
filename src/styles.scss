@@ -4,7 +4,7 @@
 @import './settings';
 
 $custom-typography: mat-typography-config(
-    $font-family: 'Exo'
+    $font-family: var(--montserrat)
 );
 
 @include mat-core($custom-typography);
@@ -13,6 +13,6 @@ body {
   background-color: #f4f3f3;
   margin: 0;
   app-root * {
-    font-family: 'Exo', sans-serif;
+    font-family: var(--montserrat);
   }
 }

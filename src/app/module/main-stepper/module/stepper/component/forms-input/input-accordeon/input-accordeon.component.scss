@@ -1,0 +1,32 @@
+.accordeon {
+  padding-bottom: 1vh;
+  
+  &--title {
+    font-family: var(--montserrat);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000000;
+  }
+
+  &--input {
+    font-family: var(--montserrat);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000000;
+  }
+
+  &--error-message {
+    margin-top: var(--spacing-xs);
+    font-size: 10px;
+    color: rgb(221, 66, 66);
+  }
+
+  &--expanded {
+    border: 2px solid var(--mainColor);
+  }
+}
+

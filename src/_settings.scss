@@ -9,16 +9,17 @@
                    Variables
 -----------------------------------------------*/
 
-$linesColor: #dbdbdb;
-$categoryTitleColor: #686868;
-$categoryEntityColor: #3F3F3F;
-
-
 :root 
-{
+{   
+    // COLOR 
     --mainColor: #3E73FA;
     --secondColor: #2EC7AB;
     --stepTitleColor: #BFBFBF;
+
+    // FONT
+    --montserrat: "Montserrat", sans-serif;
+
+    // FONT SIZE 
     --questionMarginTop: 16px;
     --stepSubtitleMargin: 8px;
     --stepTitleMargin: 0px;
@@ -26,5 +27,13 @@ $categoryEntityColor: #3F3F3F;
     --sizeInputTitle: 14px;
     --sizeStepSubtitle: 18px;
     --sizeStepTitle: 14px;
+
+    // SPACING 
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-s: 16px;
+    --spacing-m: 32px;
+    --spacing-l: 48px;
+    --spacing-xl: 96px;
 }
 

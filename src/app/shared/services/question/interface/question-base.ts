@@ -1,7 +1,7 @@
 export class QuestionBase<T> {
   id: number;
-  value: T;
-  key: string;
+  value: any;
+  key: string ;
   label: string;
   required: boolean;
   order: number;
@@ -12,10 +12,13 @@ export class QuestionBase<T> {
   parentStep: number;
   disabled: boolean;
   img: string;
+  placeholder: string;
+  showLabel: string;
+  errorMsg: string;
 
   constructor(options: {
       id?: number,
-      value?: T;
+      value?: any;
       key?: string;
       label?: string;
       required?: boolean;
@@ -27,6 +30,9 @@ export class QuestionBase<T> {
       parentStep?: number;
       disabled?: boolean;
       img?: string;
+      placeholder?: string;
+      showLabel?: string;
+      errorMsg?: string;
     } = {}) {
     this.id = options.id || 0,
     this.value = options.value!;
@@ -41,7 +47,9 @@ export class QuestionBase<T> {
     this.parentStep = options.parentStep || 0;
     this.disabled = options.disabled || false;
     this.img = options.img || '';
+    this.placeholder =  options.placeholder || '';
+    this.showLabel =  options.showLabel || 'true';
+    this.errorMsg = options.errorMsg || '';
   }
 }
-
 

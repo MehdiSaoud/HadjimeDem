@@ -16,11 +16,10 @@ import { MainStepperModule } from "./module/main-stepper/main-stepper.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./component/header/header.component";
 import { MainComponent } from "./layout/main/main.component";
-import { NextStepComponent } from './module/main-stepper/module/stepper/component/next-step/next-step.component';
 
 /*** SERVICES ***/
 import { AuthService } from "./shared/services";
-import { EstimationComponent } from './estimation/estimation.component';
+
 
 export function appInitializerFactory(authService: AuthService) {
   return () => authService.checkTheUserOnTheFirstLoad();
@@ -34,7 +33,7 @@ export function appInitializerFactory(authService: AuthService) {
     AppRoutingModule,
     MainStepperModule,
   ],
-  declarations: [AppComponent, HeaderComponent, MainComponent, EstimationComponent],
+  declarations: [AppComponent, HeaderComponent, MainComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

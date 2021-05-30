@@ -2,10 +2,34 @@
 
 
 .question {
-    margin-top: var(--questionMarginTop);
 
     &--label {
-        @include titles(var(--sizeInputTitle));
+        font-family: var(--montserrat);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #000000;
+    }
+
+    &--question-input-wrapper{
+        font-family: var(--montserrat);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        color: #000000;
+        // padding-top:  var(--spacing-xs);
+    }
+
+    &--error-message{
+        font-family: var(--montserrat);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgb(221, 66, 66);
     }
 }
 
@@ -17,6 +41,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: var(--spacing-s);
 }
+
+// Change mat-form-field outline color when focused
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick{
+    color: var(--secondColor);
+}
+
+::ng-deep .mat-hint {
+    color: rgb(221, 66, 66);
+  
+}
+
+::ng-deep  .mat-form-field-wrapper .mat-form-field-subscript-wrapper {
+    padding: 0 !important;
+}
+
+
+
+
+
 
 

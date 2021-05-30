@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-@mixin inputContent($height: 0) {
+@mixin formInput($height: 0) {
     height: $height;
-    padding: 12px 14px ;
-    margin-top: 8px;
+    padding: 12px 14px;
     border: 0.5px solid #868686;
     box-sizing: border-box;
     border-radius: 2px;
     background-color: white;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 13px;
 };
 
 
@@ -28,4 +24,14 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 18px;
+}
+
+@mixin inputText {
+    font-family: var(--montserrat);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
 }

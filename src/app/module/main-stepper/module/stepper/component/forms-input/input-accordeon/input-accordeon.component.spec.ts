@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NextStepComponent } from './next-step.component';
+import { InputAccordeonComponent } from './input-accordeon.component';
 
-describe('NextStepComponent', () => {
-  let component: NextStepComponent;
-  let fixture: ComponentFixture<NextStepComponent>;
+describe('InputAccordeonComponent', () => {
+  let component: InputAccordeonComponent;
+  let fixture: ComponentFixture<InputAccordeonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NextStepComponent ]
+      declarations: [ InputAccordeonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NextStepComponent);
+    fixture = TestBed.createComponent(InputAccordeonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

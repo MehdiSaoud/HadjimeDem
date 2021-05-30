@@ -1,0 +1,7 @@
+<div [formGroup]="form">
+    <mat-form-field  appearance="outline" [style.width.%]='100'>
+        <input matInput placeholder="{{question.placeholder}}" [id]='question.key'
+            [formControlName]="question.key" type="question.type">
+            <mat-hint *ngIf='!this.form.controls[this.question.key].valid  && this.form.controls[this.question.key].touched '>{{question.errorMsg}}</mat-hint>
+    </mat-form-field>
+</div>

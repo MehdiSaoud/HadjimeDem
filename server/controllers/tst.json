@@ -1,0 +1,42 @@
+  {
+  "volume": 37,
+  "relocationDate": "Sun May 23 2021 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
+  "createdAt": "Sun May 23 2021 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
+  "relocationDescription":"blablabla",
+  "state": "Relance",
+  "recoveryCount": 0,
+  "customer": {
+    "lastName": "jean",
+    "firstName":"dominique",
+    "mail": "mail@MAIL.COM",
+    "phone": "0781590401"
+  },
+
+  "arrival": {
+    "homeType": "house",
+    "address": "33 rue beranger Colombes",
+    "floor": 1,
+    "elevator": {
+      "available": true,
+      "size": "Oui"
+    },
+    "additionalInfo":"blablabla"
+  },
+
+  "leaving": {
+    "homeType": "house",
+    "address": "33 rue beranger Colombes",
+    "floor": 4,
+    "elevator": {
+      "available":true,
+      "size": "En partie"
+    },
+    "additionalInfo": "blablba"
+  },
+
+  "prices": {
+    "low": "1200 - 1400",
+    "medium": "1400 - 1600",
+    "hight": "1600 - 1800"
+  }
+}

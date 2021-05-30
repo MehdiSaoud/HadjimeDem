@@ -15,5 +15,7 @@
 }
 
 h2 {
-  @include titles(var(--sizeStepTitle), var(--stepTitleColor), var(--stepTitleMargin))
+  @include titles(var(--sizeStepTitle), var(--stepTitleColor), var(--stepTitleMargin));
 }
+
+

@@ -99,7 +99,13 @@ export class StepsService {
         const steps: StepInterface<string>[] = [
           new StepInterface({
             id: 11,
-            title: 'Quand souhaitez vous déménager ?',
+            title: 'Date et description du projet',
+            parentStep: 3,
+            order: 1
+          }),
+          new StepInterface({
+            id: 12,
+            title: 'Estimation du volume',
             parentStep: 3,
             order: 1
           })

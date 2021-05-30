@@ -19,7 +19,7 @@ export class DynamicFormQuestionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
- 
+
   }
 
   updateRelatedFromSwitch($event:any){
@@ -40,6 +40,10 @@ export class DynamicFormQuestionComponent implements OnInit {
     
   }
 
-  get isValid() { return this.form.controls[this.question.key].valid; }
+  get isValid() { 
+    if(this.question.key !== 'date'){
+      return this.form.controls[this.question.key].valid; 
+    }
+  }
 
 }

@@ -7,8 +7,8 @@ const quoteSchema = Joi.object().keys({
   relocationDate: Joi.date().required(),
   createdAt: Joi.date().optional(),
   relocationDescription: Joi.string().required(),
+  state: Joi.string().allow('Envoyé', 'Relance', 'Validé', 'Refusé').required(),
   recoveryCount: Joi.number().required(),
-  state: Joi.string().allow('Envoyé', 'À relancer', 'Validé', 'Refusé').required(),
   lastRecoveryDateCall: Joi.date().optional(),
 
   // Customer info
@@ -22,8 +22,6 @@ const quoteSchema = Joi.object().keys({
   arrival: Joi.object().keys({
     homeType: Joi.string().required(),
     address: Joi.string().required(),
-    city: Joi.string().required(),
-    zipCode: Joi.number().required(),
     floor: Joi.number().required(),
     elevator: Joi.object().keys({
       available: Joi.boolean().required(),
@@ -35,8 +33,6 @@ const quoteSchema = Joi.object().keys({
   leaving: Joi.object().keys({
     homeType: Joi.string().required(),
     address: Joi.string().required(),
-    city: Joi.string().required(),
-    zipCode: Joi.number().required(),
     floor: Joi.number().required(),
     elevator: Joi.object().keys({
       available: Joi.boolean().required(),
@@ -66,7 +62,7 @@ const quoteSchema = Joi.object().keys({
       }).required(),
     }),
   furnitures: Joi.array().required(),
-  }),
+  }).optional(),
 })
 
 

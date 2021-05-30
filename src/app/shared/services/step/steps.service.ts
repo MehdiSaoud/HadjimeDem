@@ -52,6 +52,13 @@ export class StepsService {
       step1: () => {
         const steps: StepInterface<string>[] = [
           new StepInterface({
+            id: 15,
+            title: 'Récapitulatif',
+            type: 'summary',
+            parentStep: 1,
+            order: 1
+          }),
+          new StepInterface({
             id: 5,
             title: "Type d'habitation au départ",
             parentStep: 1,

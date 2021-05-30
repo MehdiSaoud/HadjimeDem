@@ -48,7 +48,7 @@
         <button class="next-step" (click)="nextStep(mainForm.controls[step.parentStep]['controls'][step.id],step.id)">ETAPE SUIVANTE</button>
       </div>
     </cdk-step>
-    <cdk-step *ngIf="step.type === 'summary' && quote">
+    <cdk-step *ngIf="step.type === 'summary'">
       <app-summary-step></app-summary-step>
       <button class="previous"   (click)="previousStep(mainForm.controls[step.parentStep]['controls'][step.id])"><img src="../../../../../assets/icons/precedent.svg" alt="precedent"></button>
     </cdk-step>

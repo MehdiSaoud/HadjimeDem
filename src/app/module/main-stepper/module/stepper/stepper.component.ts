@@ -61,7 +61,8 @@ export class StepperComponent implements OnInit {
     } 
 
     if(step.valid && stepId === 14){
-      this.getQuote()
+      //this.getQuote()
+      this.cdkStepper.next();
     }
   }
 

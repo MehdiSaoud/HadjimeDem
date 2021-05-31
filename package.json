@@ -24,6 +24,7 @@
     "@angular/platform-browser": "^11.0.3",
     "@angular/platform-browser-dynamic": "^11.0.3",
     "@angular/router": "^11.0.3",
+    "@angular/service-worker": "^11.0.3",
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.2",
     "compression": "^1.7.2",

@@ -10,9 +10,16 @@ export class QuestionControlService {
     const group: any = {};
 
     questions.forEach(question => {
-
-      group[question.key] = !question.required ? new FormControl(question.value || '', Validators.required)
+      if(question.controlType === 'switch'){
+        group[question.key] = new FormControl(false, Validators.required)
+      } else if(question.controlType === 'textbox' && question.type === 'email'){
+       
+          group[question.key] = new FormControl('', [Validators.required,Validators.email])
+      } else {
+        group[question.key] = !question.required ? new FormControl(question.value || '', Validators.required)
                                               : new FormControl(question.value || '');
+      }
+      
     });
   
     return new FormGroup(group);

@@ -26,7 +26,7 @@ export class QuestionBase<T> {
       relatedTo?: Array<number>;
       controlType?: string;
       type?: string;
-      options?: {key: string, value: string, img?:string}[];
+      options?: {key: string, value: string, img?:string,options?:object,type?:string}[];
       parentStep?: number;
       disabled?: boolean;
       img?: string;

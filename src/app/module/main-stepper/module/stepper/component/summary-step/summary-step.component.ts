@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormuleService } from '../../../../../../shared/services/formule/formule.service';
 
 @Component({
   selector: 'app-summary-step',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryStepComponent implements OnInit {
 
-  constructor() { }
+  @Input() quote:any;
+  formules: any; // TODO FORMULE INTERFACE
+  constructor(private formuleService: FormuleService) { 
+    this.formuleService.getAllFormule().subscribe(result =>{
+      this.formules = result;
+    })
+  }
 
   ngOnInit(): void {
   }

@@ -3,46 +3,49 @@
 <div class="recapitulatif">
     <h3>Départ</h3>
     <div>
-        <p class="adresse">Adresse</p><p> : 95 av. des grésillons</p>
+        <p class="adresse">Adresse</p><p> : {{quote.arrival.address}}</p>
     </div>
-    <p>Appartement</p>
-    <p>3ème étage</p>
-    <p>Avec ascenseur (6 pers.)</p>
+    <p>{{quote.arrival.homeType}}</p>
+    <p>{{quote.arrival.floor}}</p>
+    <p *ngIf='quote.arrival.elevator.available'>Avec ascenseur (Les meubles rentrent ? {{quote.arrival.elevator.size}})</p>
 </div>
 
 <div class="recapitulatif">
-    <h3>Départ</h3>
+    <h3>Arrivé</h3>
     <div>
-        <p class="adresse">Adresse</p><p> : 95 av. des grésillons</p>
+        <p class="adresse">Adresse</p><p> : {{quote.leaving.address}}</p>
     </div>
-    <p>Appartement</p>
-    <p>3ème étage</p>
-    <p>Avec ascenseur (6 pers.)</p>
+    <p>{{quote.leaving.homeType}}</p>
+    <p>{{quote.leaving.floor}}</p>
+    <p *ngIf='quote.leaving.elevator.available'>Avec ascenseur (Les meubles rentrent ? {{quote.arrival.elevator.size}})</p>
+   
 </div>
 
 
 <h2 class="title">Volume total à déménager</h2>
 
 <div class="volume-total">
-    <p>88 m3</p>
+    <p>{{quote.volume}} m3</p>
 </div>
 
 <h2 class="title">Estimation</h2>
 
-<div class="estimation">
-    <h3>Économique</h3>
-    <p>1000-1500€</p>
+<div *ngIf="formules">
+    <div *ngFor='let formule of formules' class="estimation">
+        <header class="header">
+            <h3>{{formule.name}}</h3>
+            <span *ngIf="formule.type === 'medium'">{{quote.prices.medium}} €</span>
+            <span *ngIf="formule.type === 'high'">{{quote.prices.hight}} €</span>
+            <span *ngIf="formule.type === 'low'">{{quote.prices.low}} €</span>
+        </header>
+       
+        <ul>
+            <li *ngFor='let option of formule.options'>- {{option}}</li>
+        </ul>
+    </div>
 </div>
 
-<div class="estimation">
-    <h3>Confort</h3>
-    <p>1000-1500€</p>
-</div>
 
-<div class="estimation">
-    <h3>Premium</h3>
-    <p>1000-1500€</p>
-</div>
 
 
 <h2 class="title">Vous avez des doutes sur votre estimation ?</h2>
@@ -51,4 +54,6 @@
     <input type="button" value="Me faire appeler par un conseiller">
     <img src="../../../../../../../assets/icons/phone.svg" alt="telephone">
 </div>
+
+<button class="next-step" (click)="nextStep(mainForm.controls[step.parentStep]['controls'][step.id],step.id)">Affiner mon devis</button>
 

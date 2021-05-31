@@ -1,40 +1,4 @@
-<!--<div class="wrapper-stepper">
-  <p>stepper works!</p>
 
-  <mat-horizontal-stepper linear #stepper>
-
-    <div *ngFor="let step of steps">
-      <mat-step [stepControl]="mainForm.controls[step.parentStep]['controls'][step.id]" >
-        <ng-template matStepLabel>{{step.title}}</ng-template>
-        <app-dynamic-form [step]='step' [mainForm]='mainForm'></app-dynamic-form>
-        <button mat-button matStepperNext [disabled]="!mainForm.controls[step.parentStep]['controls'][step.id].valid" (click)="isValid(step)">ETAPE SUIVANTE</button>
-      </mat-step>
-      
-    </div>
-    
-  </mat-horizontal-stepper>
-  
-</div>  -->
-
-<!--
-<div class="wrapper-stepper">
-  <p>stepper works!</p>
-   
-  <cdkStepper linear [type]="horizontal" #stepper>
-     
-    <div *ngFor="let step of steps">
-      <cdk-step [stepControl]="mainForm.controls[step.parentStep]['controls'][step.id]" >
-        <ng-template cdkStepLabel>{{step.title}}</ng-template>
-        <app-dynamic-form [step]='step' [mainForm]='mainForm'></app-dynamic-form>
-        <button cdkStepperNext [disabled]="!mainForm.controls[step.parentStep]['controls'][step.id].valid" (click)="isValid()">ETAPE SUIVANTE</button>
-      </cdk-step>
-      
-    </div>
-    
-  </cdkStepper>
-  
-</div>
--->
 
 <app-custom-stepper [parentStepTitle]='parentStepTitle' #cdkStepper>
   <div *ngFor="let step of steps">
@@ -48,8 +12,8 @@
         <button class="next-step" (click)="nextStep(mainForm.controls[step.parentStep]['controls'][step.id],step.id)">ETAPE SUIVANTE</button>
       </div>
     </cdk-step>
-    <cdk-step *ngIf="step.type === 'summary'">
-      <app-summary-step></app-summary-step>
+    <cdk-step *ngIf="step.type === 'summary' ">
+      <app-summary-step *ngIf="quote" [quote]='quote'></app-summary-step>
       <button class="previous" (click)="previousStep(mainForm.controls[step.parentStep]['controls'][step.id])"><img src="../../../../../assets/icons/precedent.svg" alt="precedent"></button>
     </cdk-step>
   </div>

@@ -63,7 +63,6 @@ export class StepperComponent implements OnInit {
     } 
 
     if(step.valid && stepId === 14){
-      this.cdkStepper.next();
       this.getQuote()
     }
   }
@@ -114,17 +113,18 @@ export class StepperComponent implements OnInit {
     }
 
     this.buildQuoteObject(this.formValues)
-
+    this.cdkStepper.next();
     this.quoteService.postQuote(this.quoteToPost).subscribe((result:any)=>{
       this.quote = result;
-      
+      this.cdkStepper.next();
     })
   }
 
   buildQuoteObject(values:Array<any>){
-
+    console.log(values);
+    
     this.quoteToPost = {};
-    this.quoteToPost.state = 'Relance';
+    // this.quoteToPost.state = 'Relance';
     this.quoteToPost.volume = values[9].volume;
     this.quoteToPost.createdAt = Date.now(); 
     this.quoteToPost.relocationDate = {start: new Date(values[8].start), end: new Date(values[8].end)};
@@ -157,6 +157,7 @@ export class StepperComponent implements OnInit {
     },
       additionalInfo: values[6]['acces']
     }
+    console.log(this.quoteToPost);
   }
   /**
    * Marks all controls in a form group as touched

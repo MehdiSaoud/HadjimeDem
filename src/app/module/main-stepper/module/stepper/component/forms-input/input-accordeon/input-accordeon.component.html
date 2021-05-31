@@ -5,12 +5,22 @@
     <mat-accordion multi>
       <mat-expansion-panel *ngFor="let opt of question.options; let index = index;" [expanded]='expandedState === index' (opened)='changeExpandedPanel(index)'  [ngClass]='{"accordeon--expanded":expandedState === index}'>
         <mat-expansion-panel-header >
+          <!-- INPUT TXT -->
           <mat-panel-title class='accordeon--title'>
             {{opt.value}}
           </mat-panel-title>
         </mat-expansion-panel-header>
-          <mat-form-field appearance="outline" class='accordeon-mat-form-field'>
+          <mat-form-field appearance="outline" class='accordeon-mat-form-field' *ngIf='opt.type === "text" '>
             <input class='accordeon--input' matInput [id]='question.key' placeholder="Indiquez votre surface en {{opt.key}}" [formControlName]='question.key' type="number" min="1">
+          </mat-form-field>
+          <!-- INPUT SELECT -->
+          <mat-form-field appearance="outline" *ngIf='opt.type === "select"'>
+            <mat-select [id]='question.key' [formControlName]='question.key'>
+              <mat-option *ngFor="let opt2 of opt.options" [value]="opt2.key">
+                {{opt2.value}}
+              </mat-option>
+            </mat-select>
+            <mat-hint *ngIf='!this.form.controls[this.question.key].valid  && this.form.controls[this.question.key].touched '>{{question.errorMsg}}</mat-hint>
           </mat-form-field>
       </mat-expansion-panel>
     </mat-accordion>

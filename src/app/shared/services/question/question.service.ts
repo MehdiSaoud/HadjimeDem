@@ -84,7 +84,7 @@ export class QuestionService {
             label: 'Disposez-vous d’un ascenseur ?',
             value: false,
             relatedTo:[3],
-            showLabel: 'false',
+            showLabel: 'true',
             order: 2,
             parentStep: 7
           }),
@@ -236,8 +236,16 @@ export class QuestionService {
             key: 'volume',
             label: 'Volume',
             options: [
-              {key: 'm2',  value: 'J’indique ma surface en m2'},
-              {key: 'm3',  value: 'Je connais déjà mon volume en m3'},
+                {type:'select',key: 'm2',  value: 'J’indique ma surface en m2',  options: [
+                {key: '-10m3',  value: '- de 10m3'},
+                {key: '15',  value: 'Studio : 10/15m3'},
+                {key: '20',  value: '1 pièce : 15/20m3'},
+                {key: '30',  value: '2 pièce : 20/30m3'},
+                {key: '40',  value: '3 pièce : 30/40m3'},
+                {key: '50',  value: '4 pièce : 40/50m3'},
+                {key: '50+',  value: '5 pièce et plus : 50m3 +' },
+              ],},
+              {type:'text',key: 'm3',  value: 'Je connais déjà mon volume en m3'},
             ],
             order: 1,
             required: true,

@@ -14,7 +14,6 @@ router.route('/')
 
 
 async function insertQuote(req, res) {
-  console.log('ouwoo2',req);
   let quote = await quoteCtrl.insert(req.body);
   res.json(quote);
 }

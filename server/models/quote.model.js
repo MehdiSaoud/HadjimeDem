@@ -41,6 +41,7 @@ const QuoteSchema = new mongoose.Schema(
         available: {
           type: Boolean,
           required: true,
+          default: false
         },
         size: {
           type: String,
@@ -70,6 +71,7 @@ const QuoteSchema = new mongoose.Schema(
         available: {
           type: Boolean,
           required: true,
+          default: false
         },
         size: {
           type: String,
@@ -125,7 +127,8 @@ const QuoteSchema = new mongoose.Schema(
     state: {
       type: String,
       required: true,
-      enum: ["Envoyé", "Relance", "Validé", "Refusé"],
+      enum: ["Envoyé", "Relance", "Validé", "Refusé","Non traité"],
+      default: "Non traité"
     },
     lastRecoveryDateCall: {
       type: Date,
